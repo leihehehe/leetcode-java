@@ -2,7 +2,11 @@ import backtracking.middle.*;
 
 public class Main {
     public static void main(String[] args) {
-        Subsets subsets = new Subsets();
-        System.out.println(subsets.subsets(new int[]{1,2,3}));
+        WordSearchMethod2 wordSearch = new WordSearchMethod2();
+        char[][] board = {{'a'}};
+        String word = "a";
+        System.out.println(wordSearch.exist(board,word));
     }
+
+
 }
