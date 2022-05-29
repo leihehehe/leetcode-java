@@ -9,6 +9,7 @@ import java.util.Stack;
 
 /***
  * Leetcode 149
+ * Preorder traversal -> push the node then add it to the result
  */
 public class BinaryTreePreorderTraversal {
 
