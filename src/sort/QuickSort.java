@@ -7,6 +7,7 @@ import java.util.Arrays;
 public class QuickSort {
     /**
      * quick sort
+     * 0(nlogn)
      * @param l
      * @param r
      * @param a
