@@ -6,7 +6,7 @@ import java.util.Arrays;
  * acwing 789
  * leetcode 34
  */
-public class TheRangeOfInteger {
+public class FindFirstAndLastPositionOfElementInSortedArray {
 
 
     public static int leftBinarySearch(int target, int[] nums){
@@ -52,8 +52,19 @@ public class TheRangeOfInteger {
     public static void main(String[] args) {
         System.out.println(Arrays.toString(searchRange(new int[]{1, 2, 3, 3, 3, 4, 5, 6}, 3)));
 
-        System.out.println(leftBinarySearchMethod2(new int[]{1, 2, 3, 3, 3, 4, 5, 6}, 3));
-        System.out.println(rightBinarySearchMethod2(new int[]{1, 2, 3, 3, 3, 4, 5, 6}, 3));
+        System.out.println(Arrays.toString(searchRangeMethod2(new int[]{1, 2, 3, 3, 3, 4, 5, 6}, 3)));
+
+    }
+    public static int[] searchRangeMethod2(int[] nums, int target) {
+
+        if(nums.length==0) return new int[]{-1,-1};
+        int l = leftBinarySearchMethod2(nums,target);
+        if (l!=-1){
+            int r = rightBinarySearchMethod2(nums,target);
+            return new int[] {l,r};
+        }
+        return new int[]{-1,-1};
+
     }
 
     /***
