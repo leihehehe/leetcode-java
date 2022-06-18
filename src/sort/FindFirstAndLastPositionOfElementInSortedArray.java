@@ -54,6 +54,7 @@ public class FindFirstAndLastPositionOfElementInSortedArray {
 
         System.out.println(Arrays.toString(searchRangeMethod2(new int[]{1, 2, 3, 3, 3, 4, 5, 6}, 3)));
 
+
     }
     public static int[] searchRangeMethod2(int[] nums, int target) {
 
@@ -112,4 +113,5 @@ public class FindFirstAndLastPositionOfElementInSortedArray {
         }
         return -1;
     }
+
 }

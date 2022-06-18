@@ -9,7 +9,7 @@ public class TheKthNumber {
 
     public static void main(String[] args) {
         int[] nums = new int[]{3,5,4,2,1};
-        int n =nums.length, k = 2;
+        int k = 2;
         System.out.println(quickSelect(0,nums.length-1,k,nums));
 
     }

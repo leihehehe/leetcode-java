@@ -3,6 +3,7 @@ package sort;
 /***
  * video explanation: https://www.bilibili.com/video/BV1fA4y1o715?vd_source=22b6f0cda021fb400d963c856256ae15
  * Leetcode 704
+ * logn
  */
 public class BinarySearch {
     /***
