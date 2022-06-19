@@ -1,6 +1,4 @@
-package LinkedList;
-
-import java.util.LinkedList;
+package linkedList;
 
 public class LinkedListCreation {
     public static void createLinkedList(){

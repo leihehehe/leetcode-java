@@ -1,5 +1,9 @@
 package sort;
 
+/***
+ * offer 51
+ * acwing 788
+ */
 public class ReversePairs {
     public int count;
     public void mergeSort(int l, int r, int[] nums){

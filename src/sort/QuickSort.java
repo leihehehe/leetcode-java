@@ -15,7 +15,7 @@ public class QuickSort {
     static void quicksort(int l,int r,int a[])
     {
         if(l>=r) return;
-        int i =l-1, j=r+1, x=a[(i+j)>>1];//get the middle value
+        int i =l-1, j=r+1, x=a[i+j>>1];//get the middle value
         while(i<j){
             //do while
             do{

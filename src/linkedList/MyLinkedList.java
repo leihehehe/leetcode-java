@@ -1,4 +1,4 @@
-package LinkedList;
+package linkedList;
 
 public class MyLinkedList {
     //dummy node
