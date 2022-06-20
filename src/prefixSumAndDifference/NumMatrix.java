@@ -1,4 +1,4 @@
-package prefixSum;
+package prefixSumAndDifference;
 
 /***
  * Leetcode 304. Range Sum Query 2D - Immutable

@@ -1,4 +1,4 @@
-package prefixSum;
+package prefixSumAndDifference;
 
 /***
  * leetcode 303 NumArray
