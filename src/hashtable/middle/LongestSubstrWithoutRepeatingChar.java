@@ -3,6 +3,9 @@ package hashtable.middle;
 import java.util.HashMap;
 import java.util.HashSet;
 
+/***
+ * Leetcode 3
+ */
 public class LongestSubstrWithoutRepeatingChar {
 
     /***
