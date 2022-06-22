@@ -4,14 +4,16 @@ import java.util.Scanner;
 
 /***
  * acwing 2816
+ * leetcode 392
  */
 public class IfSubSequence {
     public static boolean checkIfSubSequence(int[] a, int[] b){
-        for(int i =0, j=0; j<b.length;j++){
-            if(i==a.length-1 && a[i]==b[j]) return true;
-            if(i<a.length-1 && a[i]==b[j]) i++;
+        int i=0,j=0,m=a.length,n=b.length;
+        while(i<m && j<n){
+            if(a[i]==b[j]) i++;
+            j++;
         }
-        return false;
+        return i==m;
     }
 
     public static void main(String[] args) {
@@ -38,5 +40,18 @@ public class IfSubSequence {
 
         if(res) System.out.println("Yes");
         else System.out.println("No");
+    }
+
+    //leetcode 392
+    public boolean isSubsequence(String s, String t) {
+        int i =0,j=0,m=s.length(),n=t.length();
+
+        while(i<m && j<n){
+            if(s.charAt(i)==t.charAt(j)) i++;
+            j++;
+        }
+
+        return i==m;
+
     }
 }
