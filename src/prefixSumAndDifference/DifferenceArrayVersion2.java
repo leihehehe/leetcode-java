@@ -9,7 +9,6 @@ public class DifferenceArrayVersion2 {
         for(int i =1;i< nums.length;i++){
             diff[i]=nums[i]-nums[i-1];
         }
-
         //add c to the diff
         diff[left-1]+=c;
         if(right< diff.length)
@@ -23,7 +22,6 @@ public class DifferenceArrayVersion2 {
     public static void main(String[] args) {
         int[] arr= new int[]{1,3,4,2,5};
         //initialize the difference array
-
         System.out.println(Arrays.toString(addNumberToArray(2,4,3,arr)));
 
     }
