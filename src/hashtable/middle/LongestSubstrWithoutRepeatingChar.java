@@ -52,6 +52,24 @@ public class LongestSubstrWithoutRepeatingChar {
 
         return maxLen;
     }
+    public static int lengthOfLongestSubstringHashMapMethod2(String s){
+        HashMap<Character,Integer> store = new HashMap();
+        int max=0;
+        for(int i =0,j=0;j<s.length();j++){
+            char c = s.charAt(j);
+            if(store.containsKey(c))
+                store.put(c,store.get(c)+1);
+            else
+                store.put(c,1);
+
+            while(store.get(c)>1){
+                store.put(s.charAt(i),store.get(s.charAt(i))-1);
+                i++;
+            }
+            max=Math.max(max,j-i+1);
+        }
+        return max;
+    }
 
 
     public static void main(String[] args) {
