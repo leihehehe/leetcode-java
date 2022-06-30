@@ -1,5 +1,8 @@
 package prefixSumAndDifference;
 
+/***
+ * Leetcode 370
+ */
 public class RangeAddition {
     public int[] getModifiedArray(int length, int[][] updates) {
         int[] diff = new int[length];

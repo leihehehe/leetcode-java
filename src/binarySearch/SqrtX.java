@@ -1,4 +1,4 @@
-package sort;
+package binarySearch;
 
 /***
  * Leetcode 69

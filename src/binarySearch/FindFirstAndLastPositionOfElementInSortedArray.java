@@ -1,4 +1,4 @@
-package sort;
+package binarySearch;
 
 import java.util.Arrays;
 
