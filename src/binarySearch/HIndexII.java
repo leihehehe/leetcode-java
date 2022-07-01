@@ -3,7 +3,7 @@ package binarySearch;
 /***
  * Leetcode 275
  */
-public class HIndex {
+public class HIndexII {
     public int hIndex(int[] citations){
         int len=citations.length;
         if(citations[len-1]==0) return 0;
