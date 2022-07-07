@@ -15,6 +15,9 @@ public class QuickSort {
     static void quicksort(int l,int r,int a[])
     {
         if(l>=r) return;
+        // - [l,i] <= pivot
+        // - [j,r] >= pivot
+        // two pointers to point to the location where we put the elements
         int i =l-1, j=r+1, x=a[i+j>>1];//get the middle value
         while(i<j){
             //do while
@@ -39,5 +42,4 @@ public class QuickSort {
         quicksort(0,5,a);
         System.out.println(Arrays.toString(a));
     }
-
 }
