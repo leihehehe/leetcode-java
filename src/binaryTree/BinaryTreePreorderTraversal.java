@@ -14,21 +14,38 @@ import java.util.Stack;
 public class BinaryTreePreorderTraversal {
 
     public static List<Integer> preorderTraversal(TreeNode root) {
-        TreeNode curNode=root;
         List<Integer> results = new ArrayList<>();
+        if(root==null) return results;
         Stack<TreeNode> stack = new Stack<>();
-        //when it comes to the last node, stack will be empty, and curNode(right) will be null
-        while(curNode!=null || stack.size()!=0){
-            while(curNode!=null){
-                stack.push(curNode);
-                results.add(curNode.val);
-                curNode=curNode.left;
-            }
-            curNode=stack.pop();
-            curNode=curNode.right;
+        stack.push(root);
+        //when it comes to the last node, stack will be empty
+        while(!stack.empty()){
+            TreeNode cur = stack.pop();
+            results.add(cur.val);
+            if(cur.right!=null)
+                stack.push(cur.right);
+            if(cur.left!=null)
+                stack.push(cur.left);
         }
 
         return results;
+    }
+
+    /***
+     * Stack
+     * @param root
+     * @return
+     */
+    public static List<Integer> preorderTraversalRecursive(TreeNode root){
+        List<Integer> arr = new ArrayList<Integer>();
+        preorder(root,arr);
+        return arr;
+    }
+    public static void preorder(TreeNode root, List<Integer> arr){
+        if(root==null) return;
+        arr.add(root.val);
+        preorder(root.left,arr);
+        preorder(root.right,arr);
     }
 
     public static void main(String[] args) {
