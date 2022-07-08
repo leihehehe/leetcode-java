@@ -21,12 +21,8 @@ public class QuickSort {
         int i =l-1, j=r+1, x=a[i+j>>1];//get the middle value
         while(i<j){
             //do while
-            do{
-                i++;
-            } while (a[i]<x);
-            do{
-                j--;
-            } while (a[j]>x);
+            do i++; while (a[i]<x);
+            do  j--;  while (a[j]>x);
             if(i<j){
                 int temp = a[i];
                 a[i]=a[j];
@@ -38,7 +34,7 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int[] a = new int[]{4,8,4,2,4,5};
+        int[] a = new int[]{5,8,4,2,1,3};
         quicksort(0,5,a);
         System.out.println(Arrays.toString(a));
     }
