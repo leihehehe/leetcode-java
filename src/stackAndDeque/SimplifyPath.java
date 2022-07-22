@@ -3,6 +3,9 @@ package stackAndDeque;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
+/***
+ * Leetccode 71
+ */
 public class SimplifyPath {
     public String simplifyPath(String path) {
         String[] paths = path.split("/");
