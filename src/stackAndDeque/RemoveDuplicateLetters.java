@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 
 /***
- * Leetcode 316
+ * Leetcode 316 -> is the same as Leetcode 1081
  */
 public class RemoveDuplicateLetters {
     public String removeDuplicateLetters(String s) {
