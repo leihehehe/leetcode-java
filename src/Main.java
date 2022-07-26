@@ -1,11 +1,15 @@
 import doublePointer.SumOfTargetArray;
 
+import java.util.Arrays;
+import java.util.Deque;
+import java.util.LinkedList;
+
 public class Main {
     public static void main(String[] args) {
-        int[] a= new int[]{1,2,4,7};
-        int[] b= new int[]{3,4,6,8,9};
-        SumOfTargetArray sumOfTargetArray = new SumOfTargetArray();
-        sumOfTargetArray.getSumArrayMethod2(a,b,6);
+        Deque deque = new LinkedList<>();
+        deque.push(111);
+        deque.push(222);
+        System.out.println(Arrays.toString(deque.toArray()));
     }
 
 
