@@ -13,4 +13,14 @@ public class MiddleOfTheLinkedList {
         }
         return slow;
     }
+    public ListNode middleNodeBefore(ListNode head) {
+        ListNode quick = head;
+        ListNode slow = head;
+        while(quick!=null && quick.next!=null&&quick.next.next!=null){
+            slow = slow.next;
+            quick=quick.next.next;
+        }
+        return slow;
+    }
+
 }
