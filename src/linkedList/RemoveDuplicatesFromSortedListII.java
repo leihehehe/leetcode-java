@@ -21,7 +21,7 @@ public class RemoveDuplicatesFromSortedListII {
             //pre.next==cur means no duplicates were detected in the while loop above
             if(pre.next==cur)  pre=pre.next;
                 //otherwise make pre.next = the node after the last duplicate
-            else pre.next=cur.next;
+            else pre.next=cur.next;//we do not move pre, because we are not sure whether the latter cur node is duplicate or not.
             cur=cur.next;
         }
         return dummyNode.next;
