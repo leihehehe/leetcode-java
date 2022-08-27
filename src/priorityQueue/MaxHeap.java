@@ -78,6 +78,15 @@ public class MaxHeap implements Queue {
         //index 0 has no data stored
         return data[1];
     }
+    public void replace(int item) {
+        if (isEmpty()) {
+            throw new IllegalArgumentException("empty heap");
+        }
+        // 注意：堆顶元素替换，size 不变
+        data[1] = item;
+        siftDown(1);
+    }
+
     public MaxHeap(int capacity){
         data = new int[capacity+1];
         this.capacity = capacity;
