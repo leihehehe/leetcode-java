@@ -1,4 +1,4 @@
-package linkedList;
+package priorityQueue;
 
 import java.util.*;
 
