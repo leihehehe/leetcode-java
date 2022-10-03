@@ -1,5 +1,8 @@
 package unionFind;
 
+/***
+ * Leetcode 547
+ */
 public class QuickFind {
     public int findProvinceNum(int[][] M){
         int len = M.length;
