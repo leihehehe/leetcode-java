@@ -35,13 +35,14 @@ public class QuickUnion1 {
             }
         }
         public int find(int x){
+            //if x equals parent[x], its a root node
             while (x != parent[x]) {
                 x = parent[x];
             }
             return x;
         }
         public void union(int x, int y){
-            //change all xId to yId, so that they could be the same Ids
+            //get the root of x and the root of y
             int xId= find(x);
             int yId= find(y);
             if(xId==yId){

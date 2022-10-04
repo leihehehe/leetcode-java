@@ -2,18 +2,14 @@ package unionFind;
 
 /***
  * Leetcode 547
- * Time complexity: N^2LogN
- * - find: O(logN)
- * - union: O(logN)
- * Space complexity: O(N)
  */
-public class QuickUnion2 {
-    public int findProvinceNum(int[][] M){
-        int len = M.length;
+public class QuickUnion3 {
+    public int findCircleNum(int[][] isConnected) {
+        int len = isConnected.length;
         UnionFind unionFind = new UnionFind(len);
         for(int i =0;i<len;i++){
             for(int j=0;j<i;j++){
-                if(M[i][j]==1){
+                if(isConnected[i][j]==1){
                     unionFind.union(i,j);
                 }
             }
@@ -21,10 +17,9 @@ public class QuickUnion2 {
         return unionFind.getCount();
     }
     class UnionFind{
-        //value->id
         private int[] parent;
         //to optimize the complexity, we are connecting a smaller size tree to another tree.
-        private int[] size;
+        private int[] rank;
         private int count;
         private int N;
         public int getCount(){
@@ -33,11 +28,11 @@ public class QuickUnion2 {
         public UnionFind(int N){
             this.N= N;
             this.count = N;
+            this.rank = new int[N];
             this.parent = new int[N];
-            this.size = new int[N];
             for(int i =0;i<N;i++){
                 parent[i] = i;
-                size[i]=1;
+                rank[i]=1;
             }
         }
         public int find(int x){
@@ -54,16 +49,15 @@ public class QuickUnion2 {
             if(xRoot==yRoot){
                 return;
             }
-            if(size[xRoot]==size[yRoot]){
+            if(rank[xRoot]==rank[yRoot]){
                 parent[xRoot]=yRoot;
-                size[yRoot]+=size[xRoot];
-            }else if(size[xRoot]<size[yRoot]){
+                rank[xRoot]+=1;
+            }else if(rank[xRoot]<rank[yRoot]){
                 parent[xRoot]=yRoot;
-                size[yRoot]+=size[xRoot];
             }else{
-                parent[yRoot]=xRoot;
-                size[xRoot]+=size[yRoot];
+                parent[xRoot]=yRoot;
             }
+
             count--;
         }
     }
