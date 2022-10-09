@@ -39,7 +39,8 @@ public class QuickUnion4 {
             //if x equals parent[x], its a root node
             while (x != parent[x]) {
                 //find the parent's parent node
-                x = parent[parent[x]];
+                parent[x] = parent[parent[x]];
+                x = parent[x];
             }
             return x;
         }
