@@ -1,5 +1,8 @@
 package unionFind;
 
+/***
+ * Leetcode 200
+ */
 public class NumberOfIslands {
     private int rows;
     private int cols;
