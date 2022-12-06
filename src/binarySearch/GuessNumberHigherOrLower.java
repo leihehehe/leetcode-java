@@ -15,4 +15,16 @@ public class GuessNumberHigherOrLower {
         }
         return l;
     }
+
+    /**
+     * Just example
+     * @param guess
+     * @return
+     */
+    public int guess(int guess){
+        int pick = 6;
+        if(guess>pick) return -1;
+        else if (guess==pick) return 0;
+        else return 1;
+    }
 }
