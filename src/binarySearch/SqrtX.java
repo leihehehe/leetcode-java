@@ -5,13 +5,13 @@ package binarySearch;
  */
 public class SqrtX {
     public int mySqrtMethod1(int x) {
-        int l =1, r = x;
+        int l=0, r = x;
         while(l<r){
-            int mid =l+(r-l+1)/2;
-            if((long)mid*mid > x) r = mid-1;
+            int mid = (l+r+1)/2;
+            if(mid>x/mid) r = mid - 1;
             else l = mid;
         }
-        return r;
+        return l ;
     }
 
     public int mySqrt(int x) {
