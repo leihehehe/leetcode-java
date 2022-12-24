@@ -8,8 +8,8 @@ public class KthLargestElementInAnArray {
     }
     public int quickSort(int[]nums, int l, int r,int k){
         if(l>=r) return nums[r];
-        //[l,i]<=pivot
-        //[j,r]>=pivot
+        //[l,i]<pivot
+        //[j,r]>pivot
         int i = l-1, j=r+1, pivot = nums[i+(j-i)/2];
         while(i<j){
             //decreasing
