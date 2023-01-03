@@ -1,14 +1,21 @@
 package priorityQueue;
 
 public class MaxHeap implements Queue {
-    public int[] data;
-    //how many elements this heap could store
-    public int capacity;
-    //actual nums of the elements
-    public int size;
+    private int[] data;
+    private int capacity;
+    private int size;
+
+    public MaxHeap(int capacity) {
+        //start with index 1
+        data = new int[capacity+1];
+        this.capacity = capacity;
+        //current size is 0
+        size = 0;
+    }
+
     @Override
     public boolean isEmpty() {
-        return size==0;
+        return size()==0;
     }
 
     @Override
@@ -18,78 +25,71 @@ public class MaxHeap implements Queue {
 
     @Override
     public void offer(int x) {
-        if(size+1>capacity){
-            throw new IllegalArgumentException("heap is full");
+        if(size()+1>capacity){
+            throw new IllegalArgumentException("Heap is full");
         }
-        data[size+1]=x;
-        size ++;
+        //put x at the last location
+        data[size()+1] = x;
+        this.size++;
+        //move data[size] up
         siftUp(size);
     }
+
+    //as long as the parent value is smaller than the current value, swap the current node and the parent node.
     public void siftUp(int k){
-        //date[k/2] is the parent node
-        while (k > 1 && data[k / 2] < data[k]) {
-            swap(data, k / 2, k);
-            k /= 2;
+        while(k>1 && data[k/2]<data[k]){
+            swap(data,k/2,k);
+            k=k/2;
         }
-    }
-    public void swap(int[] data, int index1, int index2){
-        int temp = data[index1];
-        data[index1]=data[index2];
-        data[index2]=temp;
     }
 
     @Override
     public int poll() {
-        if(size==0){
-            throw new IllegalArgumentException("empty heap");
+        if(size()==0){
+            throw new IllegalArgumentException("堆为空。");
         }
         int ret = data[1];
-        //move the last element to the first
-        data[1]=data[size];
+        data[1] = data[size];
         size--;
         siftDown(1);
         return ret;
     }
 
-    private void siftDown(int k){
-        int temp = data[k];
-        //as long as it has children
-        while (2 * k <= size) {
-            int j = 2 * k;
-            // if it has child on the right-hand side, and right > left
-            if (j + 1 <= size && data[j + 1] > data[j]) {
+    public void siftDown(int k){
+        //left child exists
+        while(2*k<=size){
+            int j = 2*k;
+            if(j+1<=2*k && data[j+1]>data[j]){
                 j++;
             }
-            if (temp >= data[j]) {
-                break;
-            }
-            //swap
-            data[k] = data[j];
-            k = j;
+            if(data[j]<=data[k]) break;
+            swap(data,k,j);
+            k=j;
         }
-        data[k] = temp;
     }
 
+    /**
+     * Get the top node
+     * @return
+     */
     @Override
     public int peek() {
-        if(isEmpty()){
-            throw new IllegalArgumentException("empty heap");
-        }
-        //index 0 has no data stored
+        if(isEmpty()) throw new IllegalArgumentException("Heap is empty");
         return data[1];
     }
-    public void replace(int item) {
-        if (isEmpty()) {
-            throw new IllegalArgumentException("empty heap");
-        }
-        // 注意：堆顶元素替换，size 不变
-        data[1] = item;
-        siftDown(1);
+
+    public void swap(int[] data, int i, int j){
+        int temp = data[i];
+        data[i] = data[j];
+        data[j] = temp;
     }
 
-    public MaxHeap(int capacity){
-        data = new int[capacity+1];
-        this.capacity = capacity;
-        size=0;
+    /**
+     * Replace
+     */
+    public void replace(int item){
+        if(isEmpty()) throw new IllegalArgumentException("Heap is empty");
+        data[1] = item;
+        siftDown(1);
     }
 }
