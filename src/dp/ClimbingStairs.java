@@ -43,4 +43,21 @@ public class ClimbingStairs {
         }
         return dp[n];
     }
+
+
+    /**
+     * Method 4: Dynamic programming optimized method
+     */
+    public int climbStairsMethod4(int n) {
+        if(n<3) return n;
+        int[] dp = new int[n+1];
+        int a = 1,b=2;
+        int res=0;
+        for(int i = 3;i<n+1;i++){
+            res = a+b;
+            a = b;
+            b = res;
+        }
+        return res;
+    }
 }
