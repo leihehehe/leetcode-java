@@ -33,7 +33,7 @@ public class FibonacciNumber {
     }
 
     /**
-     * Method 3:
+     * Method 3: Dynamic programming
      */
     public int fib3(int n){
         if(n<2) return n;
