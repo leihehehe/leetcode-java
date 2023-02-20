@@ -4,6 +4,13 @@ package dp;
  * Leetcode 309
  */
 public class BestTimeToBuyAndSellStockWithCooldown {
+    /**
+     * Method 1
+     * TIME: O(N)
+     * SPACE: O(N^2)
+     * @param prices
+     * @return
+     */
     public int maxProfit(int[] prices) {
         int n = prices.length;
         if(n<=1) return 0;
