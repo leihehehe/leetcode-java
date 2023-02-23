@@ -32,6 +32,7 @@ public class BinaryTreeLevelOrderTraversalII {
         while(!resCover.isEmpty()){
             res.add(resCover.pop());
         }
+        //we can also use Collections.reverse();
 
         return res;
     }
