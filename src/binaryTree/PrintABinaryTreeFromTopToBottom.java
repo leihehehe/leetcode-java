@@ -8,6 +8,12 @@ import java.util.Queue;
  * Leetcode offer 32
  */
 public class PrintABinaryTreeFromTopToBottom {
+    /**
+     * Time: O(N)
+     * Space: O(N)
+     * @param root
+     * @return
+     */
     public int[] levelOrder(TreeNode root) {
         if(root==null) return new int[0];
         Queue<TreeNode> queue = new ArrayDeque<>();
