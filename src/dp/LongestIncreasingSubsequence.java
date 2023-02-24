@@ -50,7 +50,7 @@ public class LongestIncreasingSubsequence {
                 int l = 0, r = end;
                 while(l<r){
                     int mid = l+(r-l)/2;
-                    if(nums[mid]>=nums[i]) r = mid;
+                    if(arr[mid]>=nums[i]) r = mid;
                     else l = mid+1;
                 }
                 arr[l] = nums[i];
