@@ -14,15 +14,13 @@ public class LongestContinuousIncreasingSubsequence {
     public int findLengthOfLCIS(int[] nums) {
         int n = nums.length;
         int[] dp = new int[n];
-        dp[0] = 1;
+        dp[0]=1;
+        int res = 1;
         for(int i =1;i<n;i++){
             if(nums[i-1]<nums[i])
-                dp[i] = dp[i-1]+1;
+                dp[i]=dp[i-1]+1;
             else dp[i] = 1;
-        }
-        int res = Integer.MIN_VALUE;
-        for(int num:dp){
-            res = Math.max(num,res);
+            res = Math.max(dp[i],res);
         }
         return res;
     }
