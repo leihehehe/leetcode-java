@@ -68,4 +68,32 @@ public class BullsAndCows {
         }
         return bulls+"A"+cows+"B";
     }
+
+    /**
+     * Method 3: two maps
+     * @param secret
+     * @param guess
+     * @return
+     */
+    public String getHintMethod3(String secret, String guess) {
+        int n = secret.length();
+        int bulls = 0;
+        int cows = 0;
+        int[] map = new int[10];
+        int[] map2= new int[10];
+        for(int i =0;i<n;i++){
+            int secretNum =secret.charAt(i)-'0';
+            int guessNum =guess.charAt(i)-'0';
+            if(secretNum==guessNum) bulls++;
+            else{
+                map[secretNum]=map[secretNum]+1;
+                map2[guessNum]=map2[guessNum]+1;
+            }
+        }
+
+        for(int i =0;i<10;i++){
+            cows+=Math.min(map[i],map2[i]);
+        }
+        return bulls+"A"+cows+"B";
+    }
 }
