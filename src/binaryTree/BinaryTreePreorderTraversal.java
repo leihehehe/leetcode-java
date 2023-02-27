@@ -17,6 +17,7 @@ public class BinaryTreePreorderTraversal {
         List<Integer> results = new ArrayList<>();
         if(root==null) return results;
         Stack<TreeNode> stack = new Stack<>();
+        //Deque<TreeNode> stack = new ArrayDeque<>();
         stack.push(root);
         //when it comes to the last node, stack will be empty
         while(!stack.empty()){
