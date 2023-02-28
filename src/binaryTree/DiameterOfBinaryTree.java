@@ -2,6 +2,8 @@ package binaryTree;
 
 /**
  * Leetcode 543
+ * Time complexity: O(n)
+ * Space complexity: O(height of the tree)
  */
 public class DiameterOfBinaryTree {
     private int res = 0;
