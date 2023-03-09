@@ -1,37 +1,35 @@
-package backtracking.middle;
+package backtracking;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Leetcode 51
+ * Leetcode 52
  */
-public class NQueens {
-    List<List<String>> res;
-    public List<List<String>> solveNQueens(int n) {
-        res = new ArrayList<>();
+public class NQueensII {
+    private int res = 0;
+    public int totalNQueens(int n) {
         List<String> board = new ArrayList<>();
         StringBuilder sb = new StringBuilder();
         for(int i =0;i<n;i++){
             sb.append('.');
         }
-        for(int i =0;i<n;i++){
+        for(int i=0;i<n;i++){
             board.add(sb.toString());
         }
         backtracking(board,0);
         return res;
-
     }
-    public void backtracking(List<String> board,int row){
+
+    public void backtracking(List<String> board, int row){
         int n = board.size();
         if(row==n){
-            res.add(new ArrayList<>(board));
+            res++;
             return;
         }
-        //column
         for(int col = 0;col<n;col++){
             if(!isValid(board,row,col)) continue;
-            char[] arr = board.get(row).toCharArray();
+            char[] arr =board.get(row).toCharArray();
             arr[col]='Q';
             board.set(row,String.valueOf(arr));
             backtracking(board,row+1);

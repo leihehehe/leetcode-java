@@ -1,4 +1,4 @@
-package backtracking.middle;
+package backtracking;
 
 /**
  * Leetcode 79 - Word Search
