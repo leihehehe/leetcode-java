@@ -36,6 +36,40 @@ public class BurstBalloons {
         return dp[1][n];
     }
 
+    /**
+     * Method 2: dp(different for loop)
+     * @param nums
+     * @return
+     */
+    public int maxCoinsMethod2(int[] nums) {
+        int n = nums.length;
+        //create a new array
+        int[] newNums = new int[n+2];
+        //add two vitual ballons to the first and last place
+        newNums[0] = newNums[n+1]=1;
+        //re-assign nums[0..n-1] to newNums[1..n]
+        for(int i =1;i<=n;i++){
+            newNums[i] = nums[i-1];
+        }
+        //dp[i][j] => the maximum coins you can collect by bursting newNums[i..j]
+        //to get dp[1][n]
+        int[][] dp = new int[n+2][n+2];
+        //base case
+        for (int i = 1; i <= n; i++) {
+            dp[i][i] = newNums[i];
+        }
+        //k is the selection
+        //dp[i][j] = dp[i][k-1]+dp[k+1][j] + newNums[i]*newNums[k]*newNums[j]
+        for(int i = n;i>=1;i--){
+            for(int j =i;j<=n;j++){
+                for(int k = i;k<=j;k++)
+                    dp[i][j] = Math.max(dp[i][j],dp[i][k-1]+dp[k+1][j]+newNums[i-1]*newNums[k]*newNums[j+1]);
+            }
+        }
+
+        return dp[1][n];
+    }
+
     int res = Integer.MIN_VALUE;
 
     /**
@@ -43,7 +77,7 @@ public class BurstBalloons {
      * @param nums
      * @return
      */
-    public int maxCoinsMethod2(int[] nums) {
+    public int maxCoinsMethod3(int[] nums) {
         backtracking(nums,0);
         return res;
     }
