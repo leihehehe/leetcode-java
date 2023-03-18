@@ -5,16 +5,16 @@ package prefixSumAndDifference;
  */
 public class RangeAddition {
     public int[] getModifiedArray(int length, int[][] updates) {
-        int[] diff = new int[length];
-        for(int[] update: updates){
-            diff[update[0]]+=update[2];
-            if(update[1]+1<length)
-                diff[update[1]+1]-= update[2];
+        int[] arr = new int[length];
+        for(int[] update :updates){
+            int start = update[0], end = update[1], inc = update[2];
+            arr[start]+=inc;
+            if(end+1<length)
+                arr[end+1]-=inc;
         }
-
-        for(int i=1; i<length;i++){
-            diff[i]+=diff[i-1];
+        for(int i = 1;i<length;i++){
+            arr[i]=arr[i-1]+arr[i];
         }
-        return diff;
+        return arr;
     }
 }
