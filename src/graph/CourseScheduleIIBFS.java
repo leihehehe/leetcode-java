@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
+/**
+ * Leetcode 210 - bfs solution
+ */
 public class CourseScheduleIIBFS {
     boolean hasCycle=false;
     boolean[] path;
