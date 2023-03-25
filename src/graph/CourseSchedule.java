@@ -2,9 +2,10 @@ package graph;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Queue;
 
 /**
- * Leetcode 207
+ * Leetcode 207 - dfs solution
  */
 public class CourseSchedule {
     boolean[] visited;
@@ -46,5 +47,36 @@ public class CourseSchedule {
             graph[from].add(to);
         }
         return graph;
+    }
+
+    /**
+     * Method 2: bfs
+     * @param numCourses
+     * @param prerequisites
+     * @return
+     */
+    public boolean canFinishMethod2(int numCourses, int[][] prerequisites) {
+        List<Integer>[] graph = buildGraph(numCourses,prerequisites);
+        int[] indegree = new int[numCourses];
+        for(int[] edge : prerequisites){
+            int from = edge[1], to = edge[0];
+            indegree[to]++;
+        }
+        Queue<Integer> queue = new LinkedList<>();
+        for(int i =0;i<numCourses;i++){
+            if(indegree[i]==0){
+                queue.offer(i);
+            }
+        }
+        int count = 0;
+        while(!queue.isEmpty()){
+            int v = queue.poll();
+            count ++;
+            for(int neighbour:graph[v]){
+                indegree[neighbour]--;
+                if(indegree[neighbour]==0) queue.offer(neighbour);
+            }
+        }
+        return count==numCourses;
     }
 }
