@@ -81,7 +81,7 @@ PS：这道题在[《算法小抄》](https://item.jd.com/12759911.html) 的第 
 <div data-tab-item="cpp" class="tab-item active" data-tab-group="default"><div class="highlight">
 
 ```cpp
-class Solution {
+class slidingWindow.MinimumOperationsToReduceXToZero {
     public:
     int lengthOfLongestSubstring(string s) {
         unordered_map<char, int> window;
@@ -116,7 +116,7 @@ class Solution {
 # 注意：python 代码由 chatGPT🤖 根据我的 cpp 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 # 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class Solution:
+class slidingWindow.MinimumOperationsToReduceXToZero:
     def lengthOfLongestSubstring(self, s: str) -> int:
         window = {}
 
@@ -146,7 +146,7 @@ class Solution:
 // 注意：java 代码由 chatGPT🤖 根据我的 cpp 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 // 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class Solution {
+class slidingWindow.MinimumOperationsToReduceXToZero {
     public int lengthOfLongestSubstring(String s) {
         Map<Character, Integer> window = new HashMap<>();
 
