@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class MinimumWindowSubstring {
     private Map<Character, Integer> window;
     private Map<Character,Integer> need;
     public String minWindow(String s, String t) {

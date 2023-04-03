@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class PermutationInString {
     private Map<Character,Integer> window = new HashMap<>();
     private Map<Character,Integer> need = new HashMap<>();
     public boolean checkInclusion(String s1, String s2) {
