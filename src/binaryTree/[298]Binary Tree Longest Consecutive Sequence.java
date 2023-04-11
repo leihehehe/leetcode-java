@@ -15,7 +15,7 @@ package binaryTree;
  *     }
  * }
  */
-class Solution {
+class BinaryTreeLongestConsecutiveSequence {
 
     public int longestConsecutive(TreeNode root) {
         traverse(root,Integer.MAX_VALUE,0);
