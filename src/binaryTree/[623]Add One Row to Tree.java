@@ -1,4 +1,4 @@
-package trie;
+package binaryTree;
 //leetcode submit region begin(Prohibit modification and deletion)
 
 
