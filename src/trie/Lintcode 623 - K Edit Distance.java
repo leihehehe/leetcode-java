@@ -68,3 +68,59 @@ class KEditDistance {
         }
     }
 }
+
+class KEditDistanceSolution2 {
+    /**
+     * @param words: a set of stirngs
+     * @param target: a target string
+     * @param k: An integer
+     * @return: output all the strings that meet the requirements
+     *          we will sort your return value in output
+     */
+    public List<String> kDistance(String[] words, String target, int k) {
+        // write your code here
+        List<String> res = new ArrayList<>();
+        for(String word:words){
+            if(editDistance(word, target)<=k) res.add(word);
+        }
+        return res;
+    }
+
+    public int editDistance(String s, String t){
+        int m = s.length();
+        int n = t.length();
+        int[][] dp = new int[m+1][n+1];
+        for(int i =0;i<=m;i++) dp[i][0] = i;
+        for(int j = 0;j<=n;j++) dp[0][j]=j;
+        for(int i =1;i<=m;i++){
+            for(int j = 1;j<=n;j++){
+                if(s.charAt(i-1)==t.charAt(j-1)) dp[i][j]=dp[i-1][j-1];
+                else dp[i][j] = Math.min(dp[i-1][j-1]+1,Math.min(dp[i-1][j]+1,dp[i][j-1]+1));
+            }
+        }
+        return dp[m][n];
+    }
+
+    /**
+     * optimized to one dimensional array
+     */
+    /*
+    public int editDistance(String s, String t){
+        int m = s.length();
+        int n = t.length();
+        // int[][] dp = new int[m+1][n+1];
+        int[] dp = new int[n+1];
+        // for(int i =0;i<=m;i++) dp[i][0] = i;
+        for(int j = 0;j<=n;j++) dp[j]=j;
+        for(int i =1;i<=m;i++){
+            int[] pre = dp.clone();
+            dp[0] = i;
+            for(int j = 1;j<=n;j++){
+                if(s.charAt(i-1)==t.charAt(j-1)) dp[j]=pre[j-1];
+                else dp[j] = Math.min(pre[j-1]+1,Math.min(pre[j]+1,dp[j-1]+1));
+            }
+        }
+        return dp[n];
+    }
+    */
+}
