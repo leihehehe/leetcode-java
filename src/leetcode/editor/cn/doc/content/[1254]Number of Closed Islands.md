@@ -89,7 +89,7 @@ Islands in gray are closed because they are completely surrounded by water (grou
 // 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 // 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class dfs.dfs.dfs.dfs.binaryTree.binaryTree.Solution {
+class dfs.dfs.dfs.dfs.binaryTree.binaryTree.binaryTree.Solution {
 public:
     // 主函数：计算封闭岛屿的数量
     int closedIsland(vector<vector<int>>& grid) {
@@ -148,7 +148,7 @@ public:
 # 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 # 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class dfs.dfs.dfs.dfs.binaryTree.binaryTree.Solution:
+class dfs.dfs.dfs.dfs.binaryTree.binaryTree.binaryTree.Solution:
     def closedIsland(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
         for j in range(n):
@@ -192,7 +192,7 @@ class dfs.dfs.dfs.dfs.binaryTree.binaryTree.Solution:
 <div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
 
 ```java
-class dfs.dfs.dfs.dfs.binaryTree.binaryTree.Solution {
+class dfs.dfs.dfs.dfs.binaryTree.binaryTree.binaryTree.Solution {
      // 主函数：计算封闭岛屿的数量
     public int closedIsland(int[][] grid) {
         int m = grid.length, n = grid[0].length;
