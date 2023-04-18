@@ -85,7 +85,7 @@
 // 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 // 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class dfs.binaryTree.binaryTree.binaryTree.binaryTree.Solution {
+class dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.Solution {
 public:
     int numDistinctIslands(vector<vector<int>>& grid) {
         int m = grid.size(), n = grid[0].size();
@@ -135,7 +135,7 @@ private:
 # 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 # 本代码还未经过力扣测试，仅供参考，如有疑惑，可以参照我写的 java 代码对比查看。
 
-class dfs.binaryTree.binaryTree.binaryTree.binaryTree.Solution:
+class dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.Solution:
     def numDistinctIslands(self, grid: List[List[int]]) -> int:
         m, n = len(grid), len(grid[0])
         islands = set() # 记录所有岛屿的序列化结果
@@ -173,7 +173,7 @@ class dfs.binaryTree.binaryTree.binaryTree.binaryTree.Solution:
 <div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
 
 ```java
-class dfs.binaryTree.binaryTree.binaryTree.binaryTree.Solution {
+class dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.Solution {
     public int numDistinctIslands(int[][] grid) {
         int m = grid.length, n = grid[0].length;
         // 记录所有岛屿的序列化结果
