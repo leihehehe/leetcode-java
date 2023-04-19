@@ -65,7 +65,7 @@
 // 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 // 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.Solution {
+class binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.Solution {
 public:
     int getMinimumDifference(TreeNode* root) {
         traverse(root);
@@ -99,7 +99,7 @@ public:
 # 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 # 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.Solution:
+class binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.Solution:
     def getMinimumDifference(self, root: TreeNode) -> int:
         self.prev = None
         self.res = float('inf')
@@ -124,7 +124,7 @@ class binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTr
 <div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
 
 ```java
-class binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.Solution {
+class binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.Solution {
     public int getMinimumDifference(TreeNode root) {
         traverse(root);
         return res;
