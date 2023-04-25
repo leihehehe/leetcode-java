@@ -73,7 +73,7 @@ PS：这道题在[《算法小抄》](https://item.jd.com/12759911.html) 的第 
 <div data-tab-item="cpp" class="tab-item active" data-tab-group="default"><div class="highlight">
 
 ```cpp
-class backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.Solution {
+class backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.Solution {
     public:
     vector<vector<int>> res;
     vector<vector<int>> subsets(vector<int>& nums) {
@@ -105,7 +105,7 @@ class backtracking.backtracking.round2.backtracking.round2.backtracking.round2.b
 # 注意：python 代码由 chatGPT🤖 根据我的 cpp 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 # 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.Solution:
+class backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         res = []
         track = []
@@ -132,7 +132,7 @@ class backtracking.backtracking.round2.backtracking.round2.backtracking.round2.b
 // 注意：java 代码由 chatGPT🤖 根据我的 cpp 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 // 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.Solution {
+class backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.Solution {
     //定义二维数组res用于存储结果
     List<List<Integer>> res = new LinkedList<>();
 
