@@ -76,7 +76,7 @@
 // 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 // 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class dfs.dfs.dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.Solution {
+class dfs.dfs.dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.Solution {
 public:
     int maxAreaOfIsland(vector<vector<int>>& grid) {
         // 记录岛屿的最大面积
@@ -123,7 +123,7 @@ public:
 # 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 # 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class dfs.dfs.dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.Solution:
+class dfs.dfs.dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.Solution:
     def maxAreaOfIsland(self, grid: List[List[int]]) -> int:
         # 记录岛屿的最大面积
         res = 0
@@ -159,7 +159,7 @@ class dfs.dfs.dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryT
 <div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
 
 ```java
-class dfs.dfs.dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.Solution {
+class dfs.dfs.dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.Solution {
     public int maxAreaOfIsland(int[][] grid) {
         // 记录岛屿的最大面积
         int res = 0;
