@@ -72,7 +72,7 @@ PS：这道题在[《算法小抄》](https://item.jd.com/12759911.html) 的第 
 // 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 // 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.Solution {
+class backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.Solution {
 public:
     vector<vector<int>> res;
 
@@ -124,7 +124,7 @@ public:
 # 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 # 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.Solution:
+class backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.Solution:
     def __init__(self):
         self.res = []
 
@@ -169,7 +169,7 @@ class backtracking.round2.backtracking.round2.backtracking.round2.backtracking.r
 <div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
 
 ```java
-class backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.Solution {
+class backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.Solution {
 
     List<List<Integer>> res = new LinkedList<>();
 
