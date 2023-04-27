@@ -75,7 +75,7 @@ BFS 算法和 DFS（回溯）算法的一大区别就是，BFS 第一次搜索�
 // 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 // 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class binaryTree.bfs.greedy.Solution {
+class binaryTree.bfs.greedy.dp.Solution {
 public:
     int minDepth(TreeNode* root) {
         if (root == NULL) return 0;
@@ -116,7 +116,7 @@ public:
 # 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 # 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class binaryTree.bfs.greedy.Solution:
+class binaryTree.bfs.greedy.dp.Solution:
     def minDepth(self, root: TreeNode) -> int:
         if not root:
             return 0
@@ -148,7 +148,7 @@ class binaryTree.bfs.greedy.Solution:
 <div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
 
 ```java
-class binaryTree.bfs.greedy.Solution {
+class binaryTree.bfs.greedy.dp.Solution {
     public int minDepth(TreeNode root) {
         if (root == null) return 0;
         Queue<TreeNode> q = new LinkedList<>();
