@@ -74,7 +74,7 @@ PS：这道题在[《算法小抄》](https://item.jd.com/12759911.html) 的第 
 // 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 // 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class backtracking.round2.binaryTree.bfs.greedy.dp.Solution {
+class backtracking.round2.binaryTree.bfs.greedy.dp.binaryTree.VerifyPreorderSerializationOfABinaryTree {
 public:
     vector<string> generateParenthesis(int n) {
         if (n == 0) return {};
@@ -121,7 +121,7 @@ public:
 # 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 # 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class backtracking.round2.binaryTree.bfs.greedy.dp.Solution:
+class backtracking.round2.binaryTree.bfs.greedy.dp.binaryTree.VerifyPreorderSerializationOfABinaryTree:
     def generateParenthesis(self, n: int) -> List[str]:
         if n == 0:
             return []
@@ -162,7 +162,7 @@ class backtracking.round2.binaryTree.bfs.greedy.dp.Solution:
 <div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
 
 ```java
-class backtracking.round2.binaryTree.bfs.greedy.dp.Solution {
+class backtracking.round2.binaryTree.bfs.greedy.dp.binaryTree.VerifyPreorderSerializationOfABinaryTree {
     public:
     vector<string> generateParenthesis(int n) {
         if (n == 0) return {};

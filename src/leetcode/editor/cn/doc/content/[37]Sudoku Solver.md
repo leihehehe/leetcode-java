@@ -75,7 +75,7 @@
 // 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 // 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.Solution {
+class backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.binaryTree.VerifyPreorderSerializationOfABinaryTree {
 public:
     void solveSudoku(vector<vector<char>>& board) {
         backtrack(board, 0, 0);
@@ -136,7 +136,7 @@ public:
 # 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 # 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.Solution:
+class backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.binaryTree.VerifyPreorderSerializationOfABinaryTree:
     def solveSudoku(self, board: List[List[str]]) -> None:
         """
         Do not return anything, modify board in-place instead.
@@ -190,7 +190,7 @@ class backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.Solution:
 <div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
 
 ```java
-class backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.Solution {
+class backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.binaryTree.VerifyPreorderSerializationOfABinaryTree {
     public void solveSudoku(char[][] board) {
         backtrack(board, 0, 0);
     }

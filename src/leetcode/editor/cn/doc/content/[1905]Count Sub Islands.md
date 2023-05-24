@@ -85,7 +85,7 @@ The 1s colored red in grid2 are those considered to be part of a sub-island. The
 // 注意：cpp 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 // 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.Solution {
+class dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.binaryTree.VerifyPreorderSerializationOfABinaryTree {
 public:
     int countSubIslands(vector<vector<int>>& grid1, vector<vector<int>>& grid2) {
         int m = grid1.size(), n = grid1[0].size();
@@ -137,7 +137,7 @@ public:
 # 注意：python 代码由 chatGPT🤖 根据我的 java 代码翻译，旨在帮助不同背景的读者理解算法逻辑。
 # 本代码已经通过力扣的测试用例，应该可直接成功提交。
 
-class dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.Solution:
+class dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.binaryTree.VerifyPreorderSerializationOfABinaryTree:
     def countSubIslands(self, grid1: List[List[int]], grid2: List[List[int]]) -> int:
         m, n = len(grid1), len(grid1[0])
 
@@ -177,7 +177,7 @@ class dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.bina
 <div data-tab-item="java" class="tab-item active" data-tab-group="default"><div class="highlight">
 
 ```java
-class dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.Solution {
+class dfs.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.binaryTree.backtracking.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.backtracking.round2.binaryTree.bfs.greedy.dp.binaryTree.VerifyPreorderSerializationOfABinaryTree {
     public int countSubIslands(int[][] grid1, int[][] grid2) {
         int m = grid1.length, n = grid1[0].length;
         for (int i = 0; i < m; i++) {
