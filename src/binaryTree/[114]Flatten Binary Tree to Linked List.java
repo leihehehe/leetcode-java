@@ -3,7 +3,7 @@ package binaryTree;
 /**
  * Leetcode 114
  */
-public class FlattenBinaryTreeToLinkedList {
+class FlattenBinaryTreeToLinkedList {
     public void flatten(TreeNode root) {
         if(root==null) return;
         flatten(root.left);
