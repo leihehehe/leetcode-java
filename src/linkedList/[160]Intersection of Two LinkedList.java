@@ -6,7 +6,7 @@ import java.util.Set;
 /***
  * Leetcode 160
  */
-public class IntersectionofTwoLinkedList {
+class IntersectionofTwoLinkedList {
 
     /***
      * Method 1: Hashset
