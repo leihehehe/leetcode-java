@@ -3,7 +3,7 @@ package doublePointer;
 /**
  * Leetcode 977
  */
-public class SquaresOfASortedArray {
+class SquaresOfASortedArray {
     public int[] sortedSquares(int[] nums) {
         int[] res = new int[nums.length];
         int p = res.length-1;
