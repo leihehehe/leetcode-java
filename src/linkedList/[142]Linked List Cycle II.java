@@ -5,7 +5,7 @@ import java.util.HashSet;
 /***
  * Leetcode 142
  */
-public class LinkedListCycleII {
+class LinkedListCycleII {
     /**
      * Method 1: double pointers
      * Time complexity: O(n)
