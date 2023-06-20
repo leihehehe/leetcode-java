@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /***
  * Leetcode 19
  */
-public class RemoveNthNodeFromEndofList {
+class RemoveNthNodeFromEndofList {
     /**
      * Method 1: ArrayList
      * Time Complexity: O(n)
