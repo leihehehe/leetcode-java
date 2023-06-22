@@ -3,8 +3,32 @@ package stackAndDeque;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class EvaluateReversePolishNotation {
+class EvaluateReversePolishNotation {
     public int evalRPN(String[] tokens) {
+        Deque<Integer> stack = new ArrayDeque<>();
+        for(int i =0;i<tokens.length;i++){
+            String token = tokens[i];
+            if(token.equals("+") || token.equals("-") || token.equals("*") || token.equals("/")){
+                int second = stack.pop();
+                int first = stack.pop();
+                int res = 0;
+                if(token.equals("+"))
+                    res=first+second;
+                if(token.equals("-"))
+                    res=first-second;
+                if(token.equals("*"))
+                    res=first * second;
+                if(token.equals("/"))
+                    res=first/second;
+                stack.push(res);
+            }else{
+                stack.push(Integer.parseInt(token));
+            }
+        }
+        return stack.pop();
+    }
+
+    public int evalRPN2(String[] tokens) {
         //["2","1","+","3","*"]
         //[4,13/5]
         Deque<String> stack = new ArrayDeque<>();
