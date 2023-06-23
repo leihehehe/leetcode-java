@@ -6,7 +6,7 @@ import java.util.Map;
 /***
  * Leetcode 106
  */
-public class ConstructBinaryTreeFromInorderAndPostorderTraversal {
+class ConstructBinaryTreeFromInorderAndPostorderTraversal {
     /**
      * Method 1
      */
