@@ -8,7 +8,7 @@ import java.util.Deque;
  * Time complexity: O(1)
  * Space complexity: O(n)
  */
-public class MinStack {
+class MinStack {
     private Deque<Integer> stack;
     private Deque<Integer> minStack;
     public MinStack() {
