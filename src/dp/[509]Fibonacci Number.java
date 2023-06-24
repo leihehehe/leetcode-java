@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Leetcode 509
  */
-public class FibonacciNumber {
+class FibonacciNumber {
     /**
      * Method 1: recursion
      * @param n
