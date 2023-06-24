@@ -3,7 +3,7 @@ package binaryTree;
 /**
  * Leetcode 701
  */
-public class InsertIntoABinarySearchTree {
+class InsertIntoABinarySearchTree {
     public TreeNode insertIntoBST(TreeNode root, int val) {
         return traverse(root,val);
     }
