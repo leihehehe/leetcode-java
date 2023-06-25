@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 70
  */
-public class ClimbingStairs {
+class ClimbingStairs {
     /**
      * Method 1: recursive method
      */

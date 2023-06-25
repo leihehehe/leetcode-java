@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 62
  */
-public class UniquePaths {
+class UniquePaths {
     /**
      * TIME: O(m*n)
      * SPACE: O(m*n)
