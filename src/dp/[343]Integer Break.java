@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 343
  */
-public class IntegerBreak {
+class IntegerBreak {
     /**
      * TIME: O(N^2)
      * SPACE: O(N)
