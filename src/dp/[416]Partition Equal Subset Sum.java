@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Leetcode 416
  */
-public class PartitionEqualSubsetSum {
+class PartitionEqualSubsetSum {
     /**
      * Method 1: dp
      * @param nums
