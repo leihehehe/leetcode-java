@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 64
  */
-public class MinimumPathSum {
+class MinimumPathSum {
     /**
      * Method 1: two-dimensional array
      * TIME: O(n^2)
