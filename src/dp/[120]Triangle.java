@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Leetcode 120
  */
-public class Triangle {
+class Triangle {
     /**
      * TIME: O(n^2)
      * SPACE: O(n^2)
