@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 931
  */
-public class MinimumFallingPathSum {
+class MinimumFallingPathSum {
     /**
      * Time Complexity: O(n^2)
      * Space Complexity: O(n^2)
