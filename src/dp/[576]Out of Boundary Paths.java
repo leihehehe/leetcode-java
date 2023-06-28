@@ -1,7 +1,7 @@
 package dp;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class OutOfBoundaryPaths {
     int MOD = 1000000007;
     static int[][][] cache = new int[51][51][51];
     public int findPaths(int m, int n, int maxMove, int startRow, int startColumn) {
