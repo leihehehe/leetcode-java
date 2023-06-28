@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 377
  */
-public class CombinationSumIV {
+class CombinationSumIV {
     /**
      * TIME: O(N*target)
      * SPACE: O(target)
