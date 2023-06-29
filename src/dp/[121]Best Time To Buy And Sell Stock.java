@@ -3,7 +3,30 @@ package dp;
 /**
  * Leetcode 121
  */
-public class BestTimeToBuyAndSellStock {
+class BestTimeToBuyAndSellStock {
+    /**
+     * 状态DP
+     * @param prices
+     * @return
+     */
+    public int maxProfitDP(int[] prices) {
+        //状态机dp，有2个状态
+        //1.哪一天？2.是否持有股票？=》求最大利润
+        int n = prices.length;
+        int[][] dp = new int[n][2];
+        //第0天，不持股票
+        dp[0][0] = 0;
+        //说明在第0天买入了股票
+        dp[0][1] = -prices[0];
+        for(int i = 1;i<n;i++){
+            //今天不持股票 => 昨天持（今天卖）/不持股票
+            dp[i][0] = Math.max(dp[i-1][1] + prices[i],dp[i-1][0]);
+            //今天持股票=》昨天持有股票（没变）/不持股票（今天买了）
+            dp[i][1] = Math.max(dp[i-1][1],-prices[i]);
+        }
+
+        return dp[n-1][0];
+    }
     /**
      * Method 1: Brute force
      */
