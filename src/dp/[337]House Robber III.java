@@ -21,7 +21,28 @@ import java.util.Map;
  *     }
  * }
  */
-class HouseRobberIII {
+class HouseRobberIIIDP{
+    public int rob(TreeNode root) {
+        int[] res = robHouse(root);
+        return Math.max(res[0],res[1]);
+    }
+
+    //int[0] -> the maximum amount of not robbing this node
+    //int[1] -> the maximum amoutn of robbing this node
+    public int[] robHouse(TreeNode root){
+        if(root == null)
+            return new int[]{0,0};
+        int[] robLeft = robHouse(root.left);
+        int[] robRight = robHouse(root.right);
+        //do not rob this node, its child nodes cannot be robbed
+        int rob = root.val +robLeft[0]+robRight[0];
+        //do not rob this node, but its child node can be rob and can be not rob.
+        int notRob =  Math.max(robLeft[0],robLeft[1])+Math.max(robRight[0],robRight[1]);
+        return new int[]{notRob,rob};
+    }
+
+}
+class HouseRobberIIIDFS {
     Map<TreeNode,Integer> map = new HashMap<>();
     public int rob(TreeNode root) {
         return getMaxAmount(root);
