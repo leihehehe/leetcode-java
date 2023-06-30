@@ -53,6 +53,23 @@ class BestTimeToBuyAndSellStockIII {
         //这个地方似乎直接返回dp[n-1][2][0]即可，因为肯定transaction次数越高，利润越高
         return Math.max(dp[(n-1)&1][2][0],dp[(n-1)&1][1][0]);
     }
+
+    public int maxProfitOptimized2(int[] prices) {
+        int n = prices.length;
+        int[][] dp = new int[3][2];
+        for(int i = 0;i<n;i++){
+            for(int k = 2;k>=1;k--){
+                if(i==0){
+                    dp[k][0] = 0;
+                    dp[k][1] = -prices[0];
+                }else{
+                    dp[k][0] = Math.max(dp[k][0],dp[k][1]+prices[i]);
+                    dp[k][1] = Math.max(dp[k][1],dp[k-1][0]-prices[i]);
+                }
+            }
+        }
+        return Math.max(dp[2][0],dp[1][0]);
+    }
     /**
      * TIME: O(N)
      * SPACE: O(N^3)
