@@ -5,7 +5,7 @@ package dp;
  */
 class BestTimeToBuyAndSellStockIII {
     /**
-     * use for loop
+     * Method 1: use for loop
      * @param prices
      * @return
      */
