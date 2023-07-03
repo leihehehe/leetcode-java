@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 213
  */
-public class HouseRobberII {
+class HouseRobberII {
     /**
      * Method 1
      * TIME: O(N)

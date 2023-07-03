@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 300
  */
-public class LongestIncreasingSubsequence {
+class LongestIncreasingSubsequence {
     /**
      * Method 1: dynamic programming
      * Time complexity: O(N^2)

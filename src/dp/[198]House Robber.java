@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 198
  */
-public class HouseRobber {
+class HouseRobber {
     /**
      * TIME: O(N)
      * SPACE: O(N)

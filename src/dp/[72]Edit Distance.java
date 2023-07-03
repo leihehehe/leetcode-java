@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 72
  */
-public class EditDistance {
+class EditDistance {
     /**
      * Time complexity: O(n^2)
      * Space complexity: O(n^2)
