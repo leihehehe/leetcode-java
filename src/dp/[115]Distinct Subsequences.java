@@ -3,9 +3,27 @@ package dp;
 /**
  * Leetcode 115
  */
-public class DistinctSubsequences {
+class DistinctSubsequences {
+
+    public int numDistinctMethod1(String s, String t) {
+        int m = s.length();
+        int n = t.length();
+        int[][] dp = new int[m+1][n+1];
+        //当t是空字符
+        for(int i = 0;i<=m;i++) dp[i][0] = 1;
+        for(int i =1;i<=m;i++){
+            for(int j = 1;j<=n;j++){
+                if(s.charAt(i-1)==t.charAt(j-1)){
+                    dp[i][j] = dp[i-1][j] + dp[i-1][j-1];
+                }else{
+                    dp[i][j] = dp[i-1][j];
+                }
+            }
+        }
+        return dp[m][n];
+    }
     /**
-     * Method 1: two-dimensional array dp
+     * Method 2: two-dimensional array dp
      * Time complexity: O(MN)
      * Space complexity: O(MN)
      * @param s
@@ -26,7 +44,7 @@ public class DistinctSubsequences {
     }
 
     /**
-     * Method 1: one-dimensional array dp - positive order
+     * Method 2: one-dimensional array dp - positive order
      * Time complexity: O(MN)
      * Space complexity: O(N)
      * @param s
