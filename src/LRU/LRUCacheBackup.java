@@ -5,10 +5,10 @@ import java.util.LinkedHashMap;
 /**
  * Leetcode 146
  */
-public class LRUCache {
+public class LRUCacheBackup {
     private int capacity;
     LinkedHashMap<Integer, Integer> cache = new LinkedHashMap<>();
-    public LRUCache(int capacity) {
+    public LRUCacheBackup(int capacity) {
         this.capacity=capacity;
     }
 
