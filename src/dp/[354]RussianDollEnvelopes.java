@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Leetcode 354
  */
-public class RussianDollEnvelopes {
+class RussianDollEnvelopes {
     /**
      * Method 1: greedy algo + binary search
      * Time complexity: O(nlogn)
