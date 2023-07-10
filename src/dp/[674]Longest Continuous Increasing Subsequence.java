@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 674
  */
-public class LongestContinuousIncreasingSubsequence {
+class LongestContinuousIncreasingSubsequence {
     /**
      * Method 1: dynamic programming
      * Time complexity: O(n)
