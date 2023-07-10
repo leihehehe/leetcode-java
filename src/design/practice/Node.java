@@ -1,4 +1,4 @@
-package LRU.practice;
+package design.practice;
 
 public class Node {
     public int key, val;

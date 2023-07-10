@@ -1,4 +1,4 @@
-package LRU.practice;
+package design.practice;
 
 import java.util.HashMap;
 
