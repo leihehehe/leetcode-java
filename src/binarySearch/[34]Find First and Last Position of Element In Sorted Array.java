@@ -6,7 +6,7 @@ import java.util.Arrays;
  * acwing 789
  * leetcode 34
  */
-public class FindFirstAndLastPositionOfElementInSortedArray {
+class FindFirstAndLastPositionOfElementInSortedArray {
 
 
     public static int leftBinarySearch(int target, int[] nums){
