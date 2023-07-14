@@ -5,7 +5,7 @@ import java.util.ArrayList;
 /**
  * Leetcode 1095
  */
-public class FindInMountainArray {
+class FindInMountainArray {
     /**
      * // This is MountainArray's API interface.
      * // You should not implement it, or speculate about its implementation
