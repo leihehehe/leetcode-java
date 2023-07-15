@@ -3,7 +3,7 @@ package dp;
 /**
  * Leetcode 53
  */
-public class MaximumSubarray {
+class MaximumSubarray {
     /**
      * Method 1: dynamic programming
      * Time complexity: O(N)

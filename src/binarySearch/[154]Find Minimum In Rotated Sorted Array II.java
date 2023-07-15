@@ -3,7 +3,7 @@ package binarySearch;
 /***
  * Leetcode 154
  */
-public class FindMinimumInRotatedSortedArrayII {
+class FindMinimumInRotatedSortedArrayII {
     public int findMin(int[] nums) {
         int l=0, r= nums.length-1;
         while(l<r){
