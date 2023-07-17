@@ -3,7 +3,7 @@ package binarySearch;
 /***
  * Leetcode 69
  */
-public class SqrtX {
+class SqrtX {
     public int mySqrtMethod1(int x) {
         int l=0, r = x;
         while(l<r){
