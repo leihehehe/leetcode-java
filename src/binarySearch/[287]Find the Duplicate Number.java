@@ -2,8 +2,9 @@ package binarySearch;
 
 /**
  * Leetcode 287
+ * Time Complexity: O(NlogN)
  */
-public class FindTheDuplicateNumber {
+class FindTheDuplicateNumber {
     public int findDuplicate(int[] nums) {
         int l = 1, r = nums.length-1;
         while(l<r){
