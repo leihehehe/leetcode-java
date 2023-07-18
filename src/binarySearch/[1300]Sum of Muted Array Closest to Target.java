@@ -3,7 +3,7 @@ package binarySearch;
 /**
  * Leetcode 1300
  */
-public class SumOfMutedArrayClosestToTarget {
+class SumOfMutedArrayClosestToTarget {
     public int findBestValue(int[] arr, int target) {
         //change x>value, and x in array, so value <= elements in array
         //find the largest number in the array
