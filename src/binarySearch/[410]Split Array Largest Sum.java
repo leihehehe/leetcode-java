@@ -3,7 +3,7 @@ package binarySearch;
 /***
  * Leetcode 410
  */
-public class SplitArrayLargestSum {
+class SplitArrayLargestSum {
     public int splitArray(int[] nums, int k) {
         //the range of the final result will be [max_num_of_nums, sum_of_nums]
         int max = 0, sum = 0;
