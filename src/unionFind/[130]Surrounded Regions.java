@@ -3,7 +3,7 @@ package unionFind;
 /**
  * Leetcode 130
  */
-public class SurroundedRegions {
+class SurroundedRegions {
     public void solve(char[][] board) {
         if(board==null && board.length == 0){
             return;
