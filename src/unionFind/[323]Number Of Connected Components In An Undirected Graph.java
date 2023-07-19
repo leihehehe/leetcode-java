@@ -3,7 +3,7 @@ package unionFind;
 /**
  * Leetcode 323
  */
-public class NumberOfConnectedComponentsInAnUndirectedGraph {
+class NumberOfConnectedComponentsInAnUndirectedGraph {
     private int[] parent;
     private int count;
     public int countComponents(int n, int[][] edges) {
