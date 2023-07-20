@@ -6,7 +6,7 @@ import java.util.Deque;
 /***
  * Leetccode 71
  */
-public class SimplifyPath {
+class SimplifyPath {
     public String simplifyPath(String path) {
         String[] paths = path.split("/");
         Deque<String> deque=new ArrayDeque<String>();
