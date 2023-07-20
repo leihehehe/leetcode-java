@@ -6,7 +6,7 @@ import java.util.Deque;
 /***
  * Leetcode 316 -> is the same as Leetcode 1081
  */
-public class RemoveDuplicateLetters {
+class RemoveDuplicateLetters {
     public String removeDuplicateLetters(String s) {
         Deque<Character> stack = new ArrayDeque<>();
 
