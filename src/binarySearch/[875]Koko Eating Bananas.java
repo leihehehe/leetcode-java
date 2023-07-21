@@ -3,7 +3,7 @@ package binarySearch;
 /**
  * Leetcode 875
  */
-public class KokoEatingBananas {
+class KokoEatingBananas {
     public int minEatingSpeed(int[] piles, int h) {
         int l = 1, r = 0;
         for(int n : piles){

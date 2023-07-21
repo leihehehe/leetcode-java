@@ -5,7 +5,7 @@ package unionFind;
  * Time complexity: O(N + A log A) -> N: the number of equations; A: the number of letters
  * Space complexity: O(A)-> A: the number of letters
  */
-public class SatisfiabilityOfEqualityEquations {
+class SatisfiabilityOfEqualityEquations {
     public boolean equationsPossible(String[] equations) {
         int[] parent = new int[26];
         for (int i = 0; i < 26; i++) {
