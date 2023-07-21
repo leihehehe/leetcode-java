@@ -6,8 +6,33 @@ import java.util.Deque;
 /***
  * Leetcode 239
  */
-public class SlidingWindowMaximum {
-    public int[] maxSlidingWindow(int[] nums, int k) {
+class SlidingWindowMaximum {
+    public int[] maxSlidingWindowMethod1(int[] nums, int k) {
+        //max
+        Deque<Integer> deque = new ArrayDeque<>();
+        int[] res = new int[nums.length-k+1];
+        int l = 0, r = 0;
+        //[l,r)
+        while(r<nums.length){
+            int toAdd = nums[r];
+            while(!deque.isEmpty() && nums[deque.peekLast()]< toAdd){
+                deque.pollLast();
+            }
+            deque.addLast(r);
+            r++;
+            if(r-l>=k){
+                res[l]=nums[deque.peekFirst()];
+                if(l==deque.peekFirst()){
+                    deque.pollFirst();
+                }
+                l++;
+
+            }
+        }
+        return res;
+
+    }
+    public int[] maxSlidingWindowMethod2(int[] nums, int k) {
         Deque<Integer> deque = new ArrayDeque<>();
         int[] res = new int[nums.length-k+1];
         for(int i =0;i<nums.length;i++){
