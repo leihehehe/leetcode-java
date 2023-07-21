@@ -3,13 +3,13 @@ package stackAndDeque;
 /***
  * Leetcode 622
  */
-class DesignCircularQueue {
+class MyCircularQueue {
     int[] queue;
     int head;
     int tail;
     int capacity;
     //loop invariant: [head,tail) is all the valid queue.
-    public DesignCircularQueue(int k) {
+    public MyCircularQueue(int k) {
         capacity= k+1;
         queue=new int[capacity];
         head=tail=0;
@@ -51,14 +51,14 @@ class DesignCircularQueue {
         return ((tail + 1) % capacity) == head;
     }
 }
-class MyCircularQueue {
+class MyCircularQueue2 {
     private int capacity;
     private int[] buffer;
     private int head;
     private int tail;
     private int size;
     //[head,tail]
-    public MyCircularQueue(int k) {
+    public MyCircularQueue2(int k) {
         capacity = k;
         buffer = new int[capacity];
         head = 0;
