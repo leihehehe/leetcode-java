@@ -7,7 +7,7 @@ import java.util.List;
 /***
  * LeetCode 47
  */
-public class PermutationsII {
+class PermutationsII {
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> permutations=new ArrayList<>();
         boolean[] visited = new boolean[nums.length];
@@ -25,7 +25,7 @@ public class PermutationsII {
                 continue;
             }
             //!visited[i-1] means the previous node should have been undone. So that we will not skip the cases like [1,1',2]
-
+            //这个是为了检测同一层的前一个节点，而不是父亲节点。如果是同一层的节点，他的visited会为false，因为为了回溯，for循环中会在最后设置为false
             if(i>0 && nums[i]==nums[i-1] &&!visited[i-1]){
                 continue;
             }
