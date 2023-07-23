@@ -58,35 +58,36 @@ class BasicCalculatorSolution1 {
 }
 class BasicCalculatorSolution2 {
     public int calculate(String s) {
-        Deque<Character> queue = new LinkedList<>();
+        s = s.replace(" ", "");
+        Deque<Character> queue = new ArrayDeque<>();
         for(int i = 0;i<s.length();i++){
-            char c = s.charAt(i);
-            queue.addLast(c);
+            queue.addLast(s.charAt(i));
         }
-        return getResult(queue);
+        return getRes(queue);
     }
-    public int getResult(Deque<Character> queue){
+    public int getRes(Deque<Character> queue){
         Deque<Integer> stack = new ArrayDeque<>();
         int num = 0;
-        char sign = '+';
+        char sign='+';
         while(!queue.isEmpty()){
             char c = queue.pollFirst();
-            if(c=='('){
-                num = getResult(queue);
-            }
             if(Character.isDigit(c)){
                 num = num*10 + (c-'0');
             }
-
-            if((!Character.isDigit(c) &&c!=' ') ||queue.isEmpty()){
+            else if(c=='('){
+                num = getRes(queue);
+            }
+            //只要不是数字就要执行这一段，否则前面的答案不会被加入到stack中
+            if(!Character.isDigit(c) || queue.isEmpty()){
                 switch (sign){
-                    case '+' -> stack.push(num);
-                    case '-' -> stack.push(-num);
+                    case '+' ->stack.push(num);
+                    case '-' ->stack.push(-num);
+                    case '*' ->stack.push(stack.pop()*num);
+                    case '/' ->stack.push(Math.floorDiv(stack.pop(),num));
                 }
                 sign = c;
                 num = 0;
             }
-
             if(c==')'){
                 break;
             }
