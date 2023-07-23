@@ -21,7 +21,7 @@ class BasicCalculatorII {
                     case '+' -> stack.push(num);
                     case '-' -> stack.push(-num);
                     case '*' -> stack.push(stack.pop() * num);
-                    case '/' -> stack.push(Math.floorDiv(stack.pop(), num));
+                    case '/' -> stack.push(stack.pop()/num);
                 }
                 sign = c;
                 num = 0;
