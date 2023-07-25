@@ -1,4 +1,4 @@
-package stackAndDeque;
+package design;
 
 class MyCircularDeque1 {
     private int[] deque;

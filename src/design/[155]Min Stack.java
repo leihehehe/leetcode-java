@@ -1,4 +1,4 @@
-package stackAndDeque;
+package design;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

@@ -1,4 +1,4 @@
-package stackAndDeque;
+package design;
 
 /***
  * Leetcode 622
