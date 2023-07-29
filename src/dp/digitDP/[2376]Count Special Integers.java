@@ -37,6 +37,7 @@ class CountSpecialIntegers {
         }
         //也可以选择不跳过当前位置，填数字(如果没有limit就是[0,up]，limit就是[1,up])
         int up = isLimit?s[i]-'0':9;
+        //枚举不同的情况
         for(int d = isNum?0:1;d<=up;d++){
             //d不在mask中，以保证数字只被使用过一次，是distinct的
             if((mask>>d&1)==0){
