@@ -25,5 +25,35 @@ class LongestMountainInArray {
         }
         return maxLen;
     }
+
+    public int longestMountainMethod2(int[] arr) {
+        int n = arr.length;
+        //以i结尾的，上升区间
+        int[] up = new int[n];
+        //以i开头的，下降区间
+        int[] down = new int[n];
+        //up[i] = up[i-1]+1; => arr[i]>arr[i-1]
+        //down[i] = down[i+1]+1 => arr[i]>arr[i+1]
+        for(int i = 0;i<arr.length;i++){
+            if(i>=1 && arr[i]>arr[i-1]){
+                up[i] = up[i-1] + 1;
+            }
+        }
+
+        for(int i = arr.length-1;i>=0;i--){
+            if(i+1<arr.length && arr[i]>arr[i+1]){
+                down[i] = down[i+1] + 1;
+            }
+        }
+
+        int max = 0;
+        for(int i = 0;i<arr.length;i++){
+            if(down[i]>0 && up[i]>0){
+                max = Math.max(down[i]+up[i]+1,max);
+            }
+
+        }
+        return max;
+    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
