@@ -1,4 +1,4 @@
-package dp;
+package dp.doubleArrayDP;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 class LongestMountainInArray {
