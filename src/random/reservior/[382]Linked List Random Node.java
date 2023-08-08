@@ -1,4 +1,4 @@
-package random;
+package random.reservior;
 
 import linkedList.ListNode;
 
