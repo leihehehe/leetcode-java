@@ -57,10 +57,10 @@ class IsSubsequenceChallenge {
             }
         }
         //没有第一个大于等于target的数
-        if(l>=arr.size()){
+        if(arr.get(l)<target){
             return -1;
         }
-        return l;
+        return arr.get(l);
     }
 
     public static void main(String[] args) {
