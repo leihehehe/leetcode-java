@@ -1,4 +1,4 @@
-package weeklyContest.simulation;
+package weeklyContest.pointers;
 
 //leetcode submit region begin(Prohibit modification and deletion)
 
