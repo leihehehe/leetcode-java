@@ -3,6 +3,7 @@ package weeklyContest.simulation;
 //leetcode submit region begin(Prohibit modification and deletion)
 
 /**
+ * Weekly Contest -> Week 383
  * Medium
  * bruteforce -> simulation
  * Thinking: Given that 3 x 3 -> m x n, can you achieve O(mn)?
