@@ -7,7 +7,7 @@ import java.util.Queue;
 
 /**
  * Medium
- * Weekly Contest - 335
+ * Weekly Contest 335
  */
 
 
