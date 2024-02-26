@@ -15,24 +15,24 @@ package binaryTree;
  *     }
  * }
  */
-class RangeSumOfBST {
-    private int low;
-    private int high;
-    private int sum;
+class RangeSumBST {
+
     public int rangeSumBST(TreeNode root, int low, int high) {
-        this.low = low;
-        this.high = high;
-        traverse(root);
-        return sum;
+        return dfs(root, low, high);
     }
 
-    public void traverse(TreeNode root){
-        if(root==null) return;
-        if(root.val>=low && root.val <=high){
-            sum+=root.val;
+    public int dfs(TreeNode root, int low, int high) {
+        if (root == null) {
+            return 0;
         }
-        traverse(root.left);
-        traverse(root.right);
+        if(root.val<low){
+            return dfs(root.right, low, high);
+        }
+        if(root.val>high){
+            return dfs(root.left, low, high);
+        }
+        return root.val+ dfs(root.left, low, high) + dfs(root.right, low, high);
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
