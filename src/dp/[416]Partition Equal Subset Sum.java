@@ -5,96 +5,81 @@ import java.util.Arrays;
 /**
  * Leetcode 416
  */
-class PartitionEqualSubsetSum {
-    /**
-     * Method 1: dp
-     * @param nums
-     * @return
-     */
+class CanPartitionSolution1 {
+    private Boolean[][] memo;
     public boolean canPartition(int[] nums) {
+        int n = nums.length;
         int sum = 0;
-        for(int i =0;i<nums.length;i++) sum+= nums[i];
+        for(int num:nums) sum+=num;
         if(sum%2!=0) return false;
-        sum/=2;//bag capacity
-        boolean[][] dp = new boolean[nums.length][sum+1];
-        //dp[i][j]=> nums[0..i] can be filled in the bag with the capacity of `sum`?
-        for(int i = 0;i<nums.length;i++){
-            dp[i][0] = true;
-        }
-        for(int i =1;i<nums.length;i++){
-            for(int j = 1;j<sum+1;j++){
-                //you don't have enough space to put this number into the bag
-                if(j-nums[i-1]<0)
-                    dp[i][j] = dp[i-1][j];
-                else dp[i][j] = dp[i-1][j-nums[i-1]] || dp[i-1][j];
-            }
-        }
-        return dp[nums.length-1][sum];
+        int target = sum/2;
+
+        memo = new Boolean[n][target+1];
+
+        return dfs(nums, n-1, target);
     }
 
-    /**
-     * Method 2: optimized dp
-     * @param nums
-     * @return
-     */
-    public boolean canPartitionMethod2(int[] nums) {
-        int sum = 0;
-        for(int i =0;i<nums.length;i++) sum+= nums[i];
-        if(sum%2!=0) return false;
-        sum/=2;//bag capacity
-        // boolean[][] dp = new boolean[nums.length][sum+1];
-        // replace the two-dimensional array with one-dimensinal array
-        boolean dp[] = new boolean[sum+1];
-        //dp[i][j]=> nums[0..i] can be filled in the bag with the capacity of `sum`?
-        dp[0] = true;
-        for(int i =1;i<nums.length;i++){
-            for(int j = sum;j>=0;j--){
-                //you don't have enough space to put this number into the bag
-                if(j-nums[i-1]>=0)
-                    dp[j] = dp[j-nums[i-1]] || dp[j];
+    public boolean dfs(int[] nums, int i, int target){
+        if(i<0){
+            if(target==0){
+                return true;
             }
-        }
-        return dp[sum];
-    }
-
-    /**
-     * Method 3: dfs - timeout error
-     * @param nums
-     * @return
-     */
-    public boolean canPartitionMethod3(int[] nums) {
-
-        int sum = 0;
-        for (int num : nums) {
-            sum += num;
-        }
-        if (sum % 2 != 0) {
             return false;
         }
-        sum /= 2;
+        if(memo[i][target]!=null){
+            return memo[i][target];
+        }
+        boolean notChosen = dfs(nums,i-1,target);
+        if(target<nums[i]){
+            memo[i][target] = notChosen;
+            return notChosen;
+        }
+        memo[i][target] = notChosen || dfs(nums,i-1,target-nums[i]);
 
-        Arrays.sort(nums);
-        reverse(nums);
+        return memo[i][target];
+        //choose or not choose
 
-        return partition(nums, sum, 0, 0);
     }
-    public void reverse(int[] data) {
-        for (int left = 0, right = data.length - 1; left < right; left++, right--) {
-            int temp = data[left];
-            data[left] = data[right];
-            data[right] = temp;
-        }
-    }
+}
+class CanPartitionSolution2 {
+    public boolean canPartition(int[] nums) {
+        int n = nums.length;
+        int sum = 0;
+        for(int num:nums) sum+=num;
+        if(sum%2!=0) return false;
+        int target = sum/2;
 
-    private boolean partition(int[] nums, int sum, int index,int p) {
-        if(p == sum) return true;
-        if(nums.length==index || p>sum) return false;
-        if (partition(nums, sum, index + 1, p + nums[index])) {
-            return true;
+        boolean[][] memo = new boolean[n+1][target+1];
+        memo[0][0] = true;
+        for(int i = 0;i<n;i++){
+            for(int j = 0;j<=target;j++){
+                boolean notChosen = memo[i][j];
+                if(j<nums[i]){
+                    memo[i+1][j] = notChosen;
+                }else{
+                    memo[i+1][j] = notChosen || memo[i][j-nums[i]];
+                }
+            }
         }
-        if (partition(nums, sum, index + 1, p)) {
-            return true;
+        return memo[n][target];
+    }
+}
+class CanPartitionSolution3 {
+    public boolean canPartition(int[] nums) {
+        int n = nums.length;
+        int sum = 0;
+        for(int num:nums) sum+=num;
+        if(sum%2!=0) return false;
+        int target = sum/2;
+        boolean[] memo = new boolean[target+1];
+        memo[0] = true;
+        for(int i = 0;i<n;i++){
+            for(int j = target;j>=0;j--){
+                if(j>=nums[i]){
+                    memo[j] = memo[j] || memo[j-nums[i]];
+                }
+            }
         }
-        return false;
+        return memo[target];
     }
 }
