@@ -36,11 +36,11 @@ class MinDistanceSolution2 {
         int n = word1.length();
         int m = word2.length();
         int[][] memo = new int[n+1][m+1];
-        for(int j = 0;j<=m;j++){
-            memo[0][j] = j;
+        for(int j = 0;j<m;j++){
+            memo[0][j+1] = j+1;
         }
-        for(int i = 0;i<=n;i++){
-            memo[i][0] = i;
+        for(int i = 0;i<n;i++){
+            memo[i+1][0] = i+1;
         }
 
         for(int i = 0;i<n;i++){
@@ -61,8 +61,8 @@ class MinDistanceSolution3 {
         int n = word1.length();
         int m = word2.length();
         int[] memo = new int[m+1];
-        for(int j = 0;j<=m;j++){
-            memo[j] = j;
+        for(int j = 0;j<m;j++){
+            memo[j+1] = j+1;
         }
 
 
