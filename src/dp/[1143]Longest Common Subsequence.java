@@ -1,76 +1,68 @@
 package dp;
-
-/**
- * Leetcode 1143
- */
-class LongestCommonSubsequence {
+class LCSSolution1 {
+    Integer[][] memo;
     public int longestCommonSubsequence(String text1, String text2) {
         int m = text1.length();
         int n = text2.length();
-        int[][] dp = new int[2][n + 1];
-        //公共部分就是前面的空格
-        for (int i = 1; i <= m; i++) {
-            for (int j = 1; j <= n; j++) {
-                if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
-                    dp[i & 1][j] = dp[(i - 1) & 1][j - 1] + 1;
-                } else {
-                    //如果不相等的话，就比较前面的数
-                    dp[i & 1][j] = Math.max(dp[(i - 1) & 1][j], dp[i & 1][j - 1]);
-                }
-            }
-        }
-        return dp[m & 1][n];
+        memo = new Integer[m][n];
+        return dfs(text1,text2,text1.length()-1,text2.length()-1);
     }
-
-    /**
-     * dp[2][c+1] optimization
-     * @param text1
-     * @param text2
-     * @return
-     */
-    public int longestCommonSubsequence2(String text1, String text2) {
-        int m = text1.length();
-        int n = text2.length();
-        int[][] dp = new int[2][n+1];
-        //公共部分就是前面的空格
-        for(int i =1;i<=m;i++){
-            for(int j = 1;j<=n;j++){
-                if(text1.charAt(i-1)==text2.charAt(j-1)){
-                    dp[i&1][j] = dp[(i-1)&1][j-1]+1;
-                }else{
-                    //如果不相等的话，就比较前面的数
-                    dp[i&1][j] = Math.max(dp[(i-1)&1][j],dp[i&1][j-1]);
-                }
-            }
+    public int dfs(String text1, String text2, int i, int j){
+        if(i<0 || j<0){
+            return 0;
         }
-        return dp[m&1][n];
-    }
-
-    /**
-     * dp[c+1] optimization
-     * @param text1
-     * @param text2
-     * @return
-     */
-    public int longestCommonSubsequence3(String text1, String text2) {
-        int m = text1.length();
-        int n = text2.length();
-        int[] dp = new int[n+1];
-        //公共部分就是前面的空格
-
-        for(int i =1;i<=m;i++){
-            int diagonal = dp[0]; // holds dp[i-1][j-1]
-            for(int j = 1;j<=n;j++){
-                int temp = dp[j];//holds dp[i-1][j]
-                if(text1.charAt(i-1)==text2.charAt(j-1)){
-                    dp[j] = diagonal+1;
-                }else{
-                    //如果不相等的话，就比较前面的数
-                    dp[j] = Math.max(dp[j],dp[j-1]);
-                }
-                diagonal = temp;
-            }
+        if(memo[i][j]!=null){
+            return memo[i][j];
         }
-        return dp[n];
+        if(text1.charAt(i) == text2.charAt(j)){
+            //把这两个选做公共子序列的一部分
+            memo[i][j] = dfs(text1,text2,i-1,j-1)+1;
+        }else{
+            //这里不用+1了，因为i和j上的数字都相等才能算公共子序列的长度+1
+            //选其中一个作为公共子序列的部分，但是是另一个子问题了。
+            memo[i][j] = Math.max(dfs(text1,text2,i,j-1),dfs(text1,text2,i-1,j));
+        }
+        return memo[i][j];
     }
 }
+class LCSSolution2 {
+    public int longestCommonSubsequence(String text1, String text2) {
+        int m = text1.length();
+        int n = text2.length();
+        int[][] memo = new int[m+1][n+1];
+        for(int i = 0;i<m;i++){
+            for(int j = 0;j<n;j++){
+                if(text1.charAt(i) == text2.charAt(j)){
+                    //把这两个选做公共子序列的一部分
+                    memo[i+1][j+1] = memo[i][j]+1;
+                }else{
+                    memo[i+1][j+1] = Math.max(memo[i+1][j],memo[i][j+1]);
+                }
+            }
+        }
+        return memo[m][n];
+    }
+}
+class LCSSolution3 {
+    public int longestCommonSubsequence(String text1, String text2) {
+        int m = text1.length();
+        int n = text2.length();
+        int[] memo = new int[n+1];
+        int temp = 0;
+        for(int i = 0;i<m;i++){
+            int prev = 0;
+            for(int j = 0;j<n;j++){
+                temp = memo[j+1];
+                if(text1.charAt(i) == text2.charAt(j)){
+                    //把这两个选做公共子序列的一部分
+                    memo[j+1] = prev+1;
+                }else{
+                    memo[j+1] = Math.max(memo[j],memo[j+1]);
+                }
+                prev = temp;
+            }
+        }
+        return memo[n];
+    }
+}
+
