@@ -1,76 +1,66 @@
 package dp;
 
-class BestTimeToBuyAndSellStockIVSolution1{
+class MaxProfitKTransactionsSolution1 {
+    int[][][] memo;
     public int maxProfit(int k, int[] prices) {
         int n = prices.length;
-        int[][][] dp = new int[n][k+1][2];
-        for(int i = 0;i<n;i++){
-            for(int j=k;j>=1;j--){
-                if(i==0){
-                    dp[0][j][0] = 0;
-                    dp[0][j][1] = -prices[0];
-                }else{
-                    dp[i][j][0] = Math.max(dp[i-1][j][0],dp[i-1][j][1]+prices[i]);
-                    dp[i][j][1] = Math.max(dp[i-1][j][1],dp[i-1][j-1][0]-prices[i]);
-                }
-
+        memo = new int[n][k+1][2];
+        for(int[][] mem1:memo){
+            for(int[] mem2:mem1){
+                mem2[0] = -1;
+                mem2[1] = -1;
             }
+
         }
-        return dp[n-1][k][0];
+        return dfs(prices, n-1, 0, k);
+    }
+
+    public int dfs(int[] prices, int i, int hold, int k){
+        if(k<0){
+            return Integer.MIN_VALUE;
+        }
+        //表示在第0天以前，还没开始的时候
+        //因此不可能有hold的情况
+        if(i<0){
+            return hold==1? Integer.MIN_VALUE : 0;
+        }
+        if(memo[i][k][hold]!=-1){
+            return memo[i][k][hold];
+        }
+        if(hold==1){
+            //卖一次算k
+            memo[i][k][hold] = Math.max(dfs(prices,i-1,1,k),dfs(prices, i-1, 0,k)-prices[i]);
+        }else{
+            //k-1表示已经用掉了一次
+            memo[i][k][hold] = Math.max(dfs(prices,i-1,0,k),dfs(prices,i-1,1,k-1)+prices[i]);
+        }
+        return memo[i][k][hold];
     }
 }
-class BestTimeToBuyAndSellStockIVSolution2 {
-    /**
-     * Method 1: dynamic programming
-     * TIME: O(NK)
-     * SPACE: O(NK)
-     * @param k
-     * @param prices
-     * @return
-     */
+
+class MaxProfitKTransactionsSolution2 {
+    int[][][] memo;
     public int maxProfit(int k, int[] prices) {
         int n = prices.length;
-        //days/transactions/stock?
-        int[][][] dp = new int[n][k+1][2];
-        for (int i = 0,  j = 0; j < k+1; j++) {
-            dp[i][j][1] = -prices[i];
+        memo = new int[n+1][k+2][2];
+        //这里i是从0开始的，j也是0
+        for(int i = 0;i<n;i++){
+            memo[i][0][0] = Integer.MIN_VALUE;
+            memo[i][0][1] = Integer.MIN_VALUE;
         }
-        int res = 0;
-        for (int i = 1; i < n; i++) {
-            for (int j = 1; j < k+1; j++) {
-                dp[i][j][0]=Math.max(dp[i-1][j][0],dp[i-1][j][1]+prices[i]);
-                dp[i][j][1] = Math.max(dp[i-1][j][1],dp[i-1][j-1][0]-prices[i]);
-                res=Math.max(res,dp[i][j][0]);
+        //这里j从0开始
+        for(int j = 0;j<=k;j++){
+            memo[0][j][1] = Integer.MIN_VALUE;
+            memo[0][j][0] = 0;
+        }
+        for(int i =0;i<n;i++){
+            for(int j = 0;j<=k;j++){
+                //卖一次算k
+                memo[i+1][j+1][1] = Math.max(memo[i][j+1][1],memo[i][j+1][0]-prices[i]);
+                memo[i+1][j+1][0] = Math.max(memo[i][j+1][0],memo[i][j][1]+prices[i]);
             }
         }
-
-        return res;
+        return memo[n][k+1][0];
     }
 
-    /**
-     * Optimized dynamic programming
-     * TIME: O(N*K)
-     * SPACE: O(K)
-     * @param k
-     * @param prices
-     * @return
-     */
-    public int maxProfitMethod2(int k, int[] prices) {
-        int n = prices.length;
-        //days/transactions/stock?
-        int[][] dp = new int[k+1][2];
-        for (int j = 0; j < k+1; j++) {
-            dp[j][1] = -prices[0];
-        }
-        int res = 0;
-        for (int i = 1; i < n; i++) {
-            for (int j = 1; j < k+1; j++) {
-                dp[j][0]=Math.max(dp[j][0],dp[j][1]+prices[i]);
-                dp[j][1] = Math.max(dp[j][1],dp[j-1][0]-prices[i]);
-                res=Math.max(res,dp[j][0]);
-            }
-        }
-
-        return res;
-    }
 }
