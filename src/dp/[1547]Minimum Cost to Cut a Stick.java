@@ -10,29 +10,32 @@ import java.util.Arrays;
 class MinCostSolution1 {
     int[][] memo;
     public int minCost(int n, int[] cuts) {
-        memo = new int[n+1][n+1];
-        for(int i = 0;i<=n;i++) Arrays.fill(memo[i], -1);
-        return dfs(cuts,0,n);
-    }
-    //minimum total cost of cuts
-    public int dfs(int[] cuts, int l, int r){
-        if(l==r){
-            return 0;
+        //0,1,3,4,5,7
+        Arrays.sort(cuts);
+        int len = cuts.length+2;
+        int[] arr = new int[len];
+        arr[0] = 0;
+        for(int i = 1;i<len-1;i++){
+            arr[i] = cuts[i-1];
         }
-        if(l>r){
+        arr[len-1] = n;
+        memo = new int[len][len];
+        for(int i = 0;i<len;i++) Arrays.fill(memo[i], -1);
+
+        return dfs(arr,0,len-1);
+    }
+    public int dfs(int[] arr, int l, int r){
+        //没有切割点了，只剩一个长度为1的棍子了
+        if(l+1>=r){
             return 0;
         }
         if(memo[l][r]!=-1) return memo[l][r];
         int res = Integer.MAX_VALUE;
-        int cost = r-l;
-        boolean cut = false;
-        for(int i = 0;i<cuts.length;i++){
-            if(cuts[i]<r && cuts[i]>l){
-                cut = true;
-                res = Math.min(dfs(cuts, l, cuts[i])+dfs(cuts, cuts[i], r)+cost,res);
-            }
+        //排除掉左右边界，左右边界不作为切割点
+        for(int i = l+1;i<r;i++){
+            res = Math.min(res,dfs(arr,l,i)+dfs(arr,i,r)+arr[r]-arr[l]);
         }
-        return memo[l][r] = cut?res:0;
+        return memo[l][r] = res;
     }
 }
 
