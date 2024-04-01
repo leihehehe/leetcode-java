@@ -25,7 +25,7 @@ class SubSetsSolution1 {
         dfs(i+1,nums);
     }
 }
-class SubSetsSolution1 {
+class SubSetsSolution2 {
     List<List<Integer>> res = new ArrayList<>();
     public List<List<Integer>> subsets(int[] nums) {
         dfs(nums,0);
