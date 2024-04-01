@@ -2,7 +2,6 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
-        calculateMaxManhattanDistance(new int[][]{3,10});
     }
 //[0,1,0] => 3
     //[0],[1],[0],[0,1],[1,0],[0,1,0] => 6
