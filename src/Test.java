@@ -2,6 +2,14 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
+        List<Integer> ancestor = new ArrayList<>();
+
+        ancestor.add(4);
+        ancestor.add(3);
+        ancestor.add(5);
+        int len = 3;
+        for(int j = 0;j<len;j++)
+            ancestor.remove(ancestor.size()-1);
     }
 //[0,1,0] => 3
     //[0],[1],[0],[0,1],[1,0],[0,1,0] => 6
