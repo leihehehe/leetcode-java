@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class CombinationSum3 {
+class CombinationSum3Solution1 {
     public List<List<Integer>> combinationSum3(int k, int n) {
         dfs(1,k,n);
         return res;
@@ -35,6 +35,43 @@ class CombinationSum3 {
         path.remove(path.size()-1);
         //not chosen
         dfs(i+1,k,target);
+    }
+}
+class CombinationSum3Solution2 {
+    public List<List<Integer>> combinationSum3(int k, int n) {
+        dfs(1,k,n);
+        return res;
+    }
+    List<List<Integer>> res = new ArrayList<>();
+    List<Integer> path = new ArrayList<>();
+    public void dfs(int i, int k, int target){
+        //超过了k个
+        if(path.size()>k)
+            return;
+        //和大于n
+        if(target<0) return;
+        if(path.size()==k && target==0){
+            res.add(new ArrayList<>(path));
+            return;
+        }
+        int need = k - path.size();
+        //剩下的数不够
+        if(need>10-i){
+            return;
+        }
+        //如果之后都选大的都不能满足target => 比如i = 2, 还要选3个，则 2+3+4
+        //使用等差数列公式 the arithmetic serires sum
+        //(first term + last term) * number of terms / 2
+
+        if((i+i+need-1)*(need)/2>target){
+            return;
+        }
+
+        for(int index = i;index<=9;index++){
+            path.add(index);
+            dfs(index+1,k,target-index);
+            path.remove(path.size()-1);
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
