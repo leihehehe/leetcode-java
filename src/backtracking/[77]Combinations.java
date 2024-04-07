@@ -54,3 +54,26 @@ class CombineSolution2 {
         }
     }
 }
+class CombineSolution3 {
+    public List<List<Integer>> combine(int n, int k) {
+        dfs(1,n,k);
+        return res;
+    }
+    List<List<Integer>> res = new ArrayList<>();
+    List<Integer> path = new ArrayList<>();
+    public void dfs(int i, int n, int k){
+        //chosen
+        if(path.size()==k){
+            res.add(new ArrayList<>(path));
+            return;
+        }
+        int need = k-path.size();
+        int remaining = n - i + 1;
+        if(need>remaining) return;
+        path.add(i);
+        dfs(i+1,n,k);
+        path.remove(path.size()-1);
+        //not chosen
+        dfs(i+1,n,k);
+    }
+}
