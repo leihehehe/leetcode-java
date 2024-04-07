@@ -1,31 +1,40 @@
 package backtracking;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class CombinationSumIII {
-    List<List<Integer>> res = new LinkedList<>();
-    LinkedList<Integer> path = new LinkedList<>();
-    int sum = 0;
+class CombinationSum3 {
     public List<List<Integer>> combinationSum3(int k, int n) {
-        backtrack(k,n,1);
+        dfs(1,k,n);
         return res;
     }
-    public void backtrack(int k, int n, int start){
-        if(path.size()==k && sum==n){
-            res.add(new LinkedList<>(path));
+
+    //1-9
+    List<List<Integer>> res = new ArrayList<>();
+    List<Integer> path = new ArrayList<>();
+    public void dfs(int i, int k, int target){
+        //超过了k个
+        if(path.size()>k)
+            return;
+        //和大于n
+        if(target<0) return;
+        if(path.size()==k && target==0){
+            res.add(new ArrayList<>(path));
             return;
         }
-        for(int i= start;i<=9;i++){
-            if(sum+i>n)
-                break;
-            sum+=i;
-            path.addLast(i);
-            backtrack(k,n,i+1);
-            sum-=i;
-            path.removeLast();
+        int need = k - path.size();
+        //剩下的数不够
+        if(need>10-i){
+            return;
         }
+        //chosen
+        path.add(i);
+        dfs(i+1,k,target-i);
+        path.remove(path.size()-1);
+        //not chosen
+        dfs(i+1,k,target);
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
