@@ -59,14 +59,6 @@ class CombinationSum3Solution2 {
         if(need>10-i){
             return;
         }
-        //如果之后都选大的都不能满足target => 比如i = 2, 还要选3个，则 2+3+4
-        //使用等差数列公式 the arithmetic serires sum
-        //(first term + last term) * number of terms / 2
-
-        if((i+i+need-1)*(need)/2>target){
-            return;
-        }
-
         for(int index = i;index<=9;index++){
             path.add(index);
             dfs(index+1,k,target-index);
