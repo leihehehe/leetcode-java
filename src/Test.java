@@ -1,9 +1,132 @@
 import java.util.*;
 
 public class Test {
+    static class Coin{
+        int coinValue;
+        long currentValue;
+        public Coin(int coinValue, long currentValue){
+            this.coinValue = coinValue;
+            this.currentValue = currentValue;
+        }
+    }
     public static void main(String[] args) {
-        getSmallestString("xaxcd",4);
+        char c = 'z';
+        System.out.println('a'-c+26);
+//        getSmallestString("xaxcd",4);
+//        System.out.println(findKthSmallest(new int[]{6,5},1435065516));
+    }
+    public static long findKthSmallest(int[] coins, int k) {
+        //3*1,3*2,3*3,3*4,3*5,3*6,3*7
+        //3*2,3*4,3*6,3*8,3*10,3*12,3*14
+        //3*3,3*6,3*9,3*12,
+        int n = coins.length;
+        Arrays.sort(coins);
+        List<Integer> newNums = new ArrayList<>();
+        PriorityQueue<Coin> minHeap = new PriorityQueue<>((a,b)->Long.compare(a.currentValue,b.currentValue));
+        Set<Long> seen = new HashSet<>();
+        newNums.add(coins[0]);
+        minHeap.add(new Coin(coins[0],(long)coins[0]));
+        for(int i = 0;i<n;i++){
+            for(int j = 0;j<newNums.size();j++){
+                if(coins[i]% newNums.get(j)==0){
+                    continue;
+                }else{
+                    newNums.add(coins[i]);
+                    minHeap.add(new Coin(coins[i],(long)coins[i]));
+                }
+            }
+        }
 
+        long kthMin = 0;
+
+        while(k>0) {
+            Coin currentCoin = minHeap.poll();
+            if(!minHeap.isEmpty() && seen.contains(currentCoin.currentValue)){
+                //do nothing
+            }else{
+                kthMin = currentCoin.currentValue;
+                seen.add(currentCoin.currentValue);
+                k--;
+            }
+            long nextVal = currentCoin.currentValue+currentCoin.coinValue;
+            minHeap.add(new Coin(currentCoin.coinValue, nextVal));
+        }
+        return kthMin;
+        //2,5
+        //2*1,2*2,2*3,2*4,2*5,2*6
+        //5*1,5*2,5*3,5*4
+
+        //2*1,2*2,5*1,2*3,2*4,2*5,5*2,2*6
+
+    }
+    //3,6,9,12,15,18 => 6
+    //6,12,18,24 => 3
+    //9,18,27,36 => 2
+    //3,6,9,12,15,18
+
+    //5,2
+    //5,10,15,20
+    //2,4,6,8,10,12
+    public static int maximumPrimeDifference(int[] nums) {
+        int n = nums.length;
+
+        int max = nums[0];
+        for(int i = 0;i<n;i++){
+            max = Math.max(max,nums[i]);
+        }
+        boolean[] primes = new boolean[max+1];
+        Arrays.fill(primes,true);
+        for(int i = 2; i*i<max+1;i++){
+            if(primes[i]){
+                for(int j = i*i;j<n;j+=i)
+                    primes[j]=false;
+            }
+        }
+        int firstPrime = -1;
+        int lastPrime=-1;
+        for(int i = 0;i<n;i++){
+            if(primes[i] && firstPrime==-1){
+                firstPrime = i;
+            }
+            if(primes[i]){
+                lastPrime = i;
+            }
+        }
+        if (firstPrime != -1 && lastPrime != -1) {
+            return lastPrime - firstPrime;
+        }
+        return 0;
+
+    }
+
+    public static String findLatestTime(String s) {
+        //11
+        //09
+        StringBuilder sb = new StringBuilder();
+        for(int i = 0;i<s.length();i++){
+            char c = s.charAt(i);
+            if(c!='?') sb.append(c);
+            else if (i==1){
+                if(sb.charAt(0)=='0'){
+                    sb.append('9');
+                }else if(sb.charAt(0)=='1'){
+                    sb.append('1');
+                }
+            }else if(i==0){
+                if(s.charAt(1)!='?' && s.charAt(1)>'1'){
+                    sb.append('0');
+                }else{
+                    sb.append('1');
+                }
+            }else if(i==3){
+                sb.append("5");
+            }else if(i==4){
+                sb.append("9");
+            }else{
+                sb.append(c);
+            }
+        }
+        return sb.toString();
     }
 
     public static String getSmallestString(String s, int k) {
