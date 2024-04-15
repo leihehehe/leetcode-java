@@ -5,48 +5,39 @@ import java.util.Arrays;
 import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-
-/**
- * Medium
- * Weekly Contest 345
- */
-class CountCompleteComponents {
+class Solution {
     public int countCompleteComponents(int n, int[][] edges) {
-        //建图
         List<Integer>[] graph = new ArrayList[n];
-        visited = new boolean[n];
-        Arrays.setAll(graph, e->new ArrayList<>());
+        Arrays.setAll(graph, x->new ArrayList<>());
         for(int[] edge:edges){
-            int v1 = edge[0];
-            int v2 = edge[1];
-            graph[v1].add(v2);
-            graph[v2].add(v1);
+            graph[edge[0]].add(edge[1]);
+            graph[edge[1]].add(edge[0]);
         }
-        int ans = 0;
+        visited = new boolean[n];
+        int res = 0;
         for(int i = 0;i<n;i++){
-            v=0;
-            e=0;
-            dfs(graph, i);
-            if(e==v*(v-1)){
-                ans++;
+            if(!visited[i]){
+                edgeCount = 0;
+                nodes = 0;
+                dfs(i,graph);
+                edgeCount/=2;
+                res += (edgeCount==nodes*(nodes-1)/2)?1:0;
             }
-
         }
-        return ans;
+        return res;
     }
-    int v,e;
     boolean[] visited;
-    public void dfs(List<Integer>[] graph, int i){
+    int edgeCount = 0;
+    int nodes = 0;
+    public void dfs(int i, List<Integer>[] graph){
         visited[i] = true;
-        List<Integer> neighbors = graph[i];
-        v++;
-        e+=neighbors.size();
-        for(int neighbor : neighbors){
+        nodes++;
+        for(int neighbor: graph[i]){
+            edgeCount++;
             if(!visited[neighbor]){
-                dfs(graph,neighbor);
+                dfs(neighbor,graph);
             }
         }
     }
-
 }
 //leetcode submit region end(Prohibit modification and deletion)
