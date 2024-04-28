@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class CountCompleteComponentsSolution {
     public int countCompleteComponents(int n, int[][] edges) {
         List<Integer>[] graph = new ArrayList[n];
         Arrays.setAll(graph, x->new ArrayList<>());

@@ -3,7 +3,7 @@ package slidingWindow;
 import java.util.HashMap;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class LongestSubstringSolution {
     public int longestSubstring(String s, int k) {
         int maxLen = 0;
         for(int i = 1;i<=26;i++){
