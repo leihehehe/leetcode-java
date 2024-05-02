@@ -2,7 +2,7 @@ package luogu;
 //https://www.luogu.com.cn/problem/solution/P2642
 import java.util.Scanner;
 
-class Double{
+class P2642{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();

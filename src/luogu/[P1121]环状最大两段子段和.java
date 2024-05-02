@@ -1,7 +1,7 @@
 package luogu;
-//https://www.luogu.com.cn/problem/solution/P2642
+//https://www.luogu.com.cn/problem/solution/P1121
 import java.util.Scanner;
-class Main {
+class P1121 {
 
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
