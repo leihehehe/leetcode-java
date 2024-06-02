@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        bitOperation.Solution solution = new bitOperation.Solution();
         solution.test();
     }
 }
