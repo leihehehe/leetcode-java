@@ -3,7 +3,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Solution1 solution = new Solution1();
-        System.out.println(4&5);
+        System.out.println(4&5&6&7);
 //        System.out.println(solution.countDays(4, new int[][]{{2, 3}, {1, 2},{2,3},{2,4},{1,2},{1,3}}));
     }
 
