@@ -2,8 +2,15 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
-        bitOperation.Solution solution = new bitOperation.Solution();
-        solution.test();
+        int[] arr = new int[]{1,1,2,2,2,3,3,4,5,5};
+        int j = 0;
+        //[0,j)
+        for(int i = 1;i<arr.length;i++){
+            if(arr[i]!=arr[j]){
+                arr[++j] = arr[i];
+            }
+        }
+        System.out.println(Arrays.toString(arr));
     }
 }
 class Pair{
