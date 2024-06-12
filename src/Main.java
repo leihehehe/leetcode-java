@@ -1,15 +1,45 @@
 import java.util.*;
 
 public class Main {
+
     public static void main(String[] args) {
         Solution1 solution = new Solution1();
+        solution.valueAfterKSeconds(4,5);
         System.out.println(4&5&6&7);
 //        System.out.println(solution.countDays(4, new int[][]{{2, 3}, {1, 2},{2,3},{2,4},{1,2},{1,3}}));
     }
 
 }
 class Solution1 {
-
+    Boolean[] memo;
+    public boolean dfs(int[] rewardValues, int i, int target, int sum){
+        if(i == rewardValues.length) return false;
+        if(memo[i]!=null) return memo[i];
+        boolean chose = false ;
+        if(rewardValues[i]>sum){
+            chose = dfs(rewardValues,i+1,target,sum+rewardValues[i]);
+        }
+        boolean notChosen = dfs(rewardValues,i+1,target,sum);
+        return memo[i] = chose || notChosen;
+    }
+    public int valueAfterKSeconds(int n, int k) {
+        //pre[1] = 1
+        //pre[2] = 3 -> 4-> 5
+        //pre[3] = 3 -> 6-> 10 -> 15
+        int[] pre = new int[n];
+        Arrays.fill(pre,1);
+        int res = 0;
+        while(k>0){
+            for(int i = 1;i<n;i++){
+                pre[i] = pre[i-1] + pre[i];
+            }
+            k--;
+        }
+        for(int p:pre){
+            res+=p;
+        }
+        return res;
+    }
     public int minimumChairs(String s) {
         int count = 0;
         int max = 0;
