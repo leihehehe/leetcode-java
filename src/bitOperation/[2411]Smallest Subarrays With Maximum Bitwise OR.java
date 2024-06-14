@@ -14,7 +14,6 @@ class SmallestSubarraysSolution {
             ors.add(new int[]{0, i});
             //对已经记录在ors的子数组，为了再扩大它们的左端点范围，需要更新or的值
             for (var or : ors) {
-                //or[1]是Or值为or[1]时最小的右端点
                 or[0] |= nums[i];
             }
             //原地去重复，为什么要去重复？
@@ -23,6 +22,7 @@ class SmallestSubarraysSolution {
             //原地去重复：
             var k = 0;
             for(var or : ors){
+                //or[1]是Or值为or[0]时最小的右端点
                 if (ors.get(k)[0] == or[0])
                     ors.get(k)[1] = or[1]; // 合并相同值，右端点下标取最小的，在or中，右端点是越变越小的，因为是倒叙遍历加入的or，ors中的or都是越变越小的。
                 else ors.set(++k, or);
