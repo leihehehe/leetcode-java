@@ -24,7 +24,7 @@ class SmallestSubarraysSolution {
             for(var or : ors){
                 //or[1]是Or值为or[0]时最小的右端点
                 if (ors.get(k)[0] == or[0])
-                    ors.get(k)[1] = or[1]; // 合并相同值，右端点下标取最小的，在or中，右端点是越变越小的，因为是倒叙遍历加入的or，ors中的or都是越变越小的。
+                    ors.get(k)[1] = or[1]; // 合并相同值，右端点下标取最小的，在or中，右端点是越变越小的，因为是倒叙遍历加入的or。
                 else ors.set(++k, or);
             }
             //去完重复k后面的都不要了
