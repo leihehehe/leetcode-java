@@ -4,37 +4,53 @@ public class Main {
 
     public static void main(String[] args) {
         Solution1 solution = new Solution1();
-        solution.maximumTotalDamage(new int[]{1,1,3,4});
+        solution.minimumSum(new int[][]{{1,0,1},{1,1,1}});
     }
 
 }
 class Solution1 {
-    HashMap<Integer,Integer> powerMap = new HashMap<>();
-    List<Integer> arr = new ArrayList<>();
-    long[] dp;
-    public long maximumTotalDamage(int[] power) {
-        for(int p:power){
-            powerMap.put(p, powerMap.getOrDefault(p, 0)+1);
-        }
-        arr.addAll(powerMap.keySet());
-        Collections.sort(arr);
-        dp = new long[arr.size()];
-        Arrays.fill(dp,-1);
-        return dfs(arr.size()-1);
-    }
+    public int minimumSum(int[][] grid) {
+        int rows = grid.length;
+        int cols = grid[0].length;
+        int maxVal = Integer.MAX_VALUE;
 
-    public long dfs(int i){
-        if(i<0) return 0;
-        if(dp[i]!=-1) return dp[i];
-        int x = arr.get(i);
-        //chosen
-        long notChosen = dfs(i-1);
-        //not chosen
-        int j = i;
-        while(j>0 && arr.get(j)>=x-2){
-            j--;
+        // 构建前缀和数组
+        int[][] prefixSum = new int[rows + 1][cols + 1];
+        for (int i = 1; i <= rows; i++) {
+            for (int j = 1; j <= cols; j++) {
+                prefixSum[i][j] = grid[i - 1][j - 1] + prefixSum[i - 1][j] + prefixSum[i][j - 1] - prefixSum[i - 1][j - 1];
+            }
         }
-        long chosen = dfs(j-1)+ (long)powerMap.get(x) * x;
-        return dp[i] = Math.max(chosen, notChosen);
+
+        // 初始化dp数组
+        int[][][] dp = new int[rows + 1][cols + 1][4];
+        for (int i = 0; i <= rows; i++) {
+            for (int j = 0; j <= cols; j++) {
+                for (int k = 0; k < 4; k++) {
+                    dp[i][j][k] = maxVal/2;
+                }
+            }
+        }
+        dp[0][0][0] = 0;
+
+        // 计算dp数组
+        for (int k = 1; k <= 3; k++) {
+            for (int i = 1; i <= rows; i++) {
+                for (int j = 1; j <= cols; j++) {
+                    for (int x = 0; x < i; x++) {
+                        if (prefixSum[i][j] - prefixSum[x][j] > 0) {
+                            dp[i][j][k] = Math.min(dp[i][j][k], dp[x][j][k - 1] + (i - x) * j);
+                        }
+                    }
+                    for (int y = 0; y < j; y++) {
+                        if (prefixSum[i][j] - prefixSum[i][y] > 0) {
+                            dp[i][j][k] = Math.min(dp[i][j][k], dp[i][y][k - 1] + i * (j - y));
+                        }
+                    }
+                }
+            }
+        }
+
+        return dp[rows][cols][3] == maxVal ? -1 : dp[rows][cols][3];
     }
 }
