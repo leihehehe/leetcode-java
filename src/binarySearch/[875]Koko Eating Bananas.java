@@ -3,29 +3,28 @@ package binarySearch;
 /**
  * Leetcode 875
  */
-class KokoEatingBananas {
+class MinEatingSpeedSolution {
     public int minEatingSpeed(int[] piles, int h) {
-        int l = 1, r = 0;
-        for(int n : piles){
-            r = Math.max(r,n);
-        }
-
+        int max = 0;
+        for(int pile:piles) max = Math.max(max,pile);
+        int l = 1, r = max;
         while(l<r){
-            int mid = l+(r-l)/2;
-            int time = getTime(piles,mid);
-            if(time>h){
-                l = mid+1;
-            }else{
+            int mid = (l+r)/2;
+            if(check(piles,h,mid)){
                 r = mid;
+            }else{
+                l = mid+1;
             }
         }
         return l;
     }
-    public int getTime(int[] piles, int speed){
-        int time = 0;
-        for(int n : piles){
-            time+= (n+speed-1)/speed;
+    public boolean check(int[] piles, int h, int k){
+        long total = 0;
+        for(int i = 0;i<piles.length;i++){
+            int p = piles[i];
+            total += (p-1+k)/k;
+            if(total>h) return false;
         }
-        return time;
+        return true;
     }
 }
