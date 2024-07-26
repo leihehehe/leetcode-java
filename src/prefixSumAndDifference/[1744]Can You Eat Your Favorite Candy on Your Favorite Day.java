@@ -14,7 +14,7 @@ class CanEatSolution {
             int favoriteDay = queries[i][1]+1;
             int dailyCap = queries[i][2];
             //下面算出来的day是1-indexed
-            //最快速度来吃，最早能在第earlistDay【吃到】我想吃的【第一颗糖】
+            //最快速度来吃，最早能在第earliestDay【吃到】我想吃的【第一颗糖】
             long earliestDay = preSum[favoriteType] / dailyCap + 1;
             //最慢速度来吃，最晚能在第latestDay【吃到】我想吃的【最后一颗糖】
             long latestDay = preSum[favoriteType + 1];
