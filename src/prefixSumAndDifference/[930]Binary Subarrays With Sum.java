@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 class NumSubarraysWithSumSolution1 {
     public int numSubarraysWithSum(int[] nums, int goal) {
-        int n = 3*(int)10e4+1;
+        int n = 3*(int)1e4+1;
         int[] map = new int[n];
         // HashMap<Integer,Integer> map = new HashMap<>();
         int sum = 0;
